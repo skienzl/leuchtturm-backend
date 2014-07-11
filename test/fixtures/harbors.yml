@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+zell:
+  name: Zell am See Kaprun
+  description: "Deep v pour-over disrupt, umami cornhole bicycle rights authentic bespoke ugh next level. Aesthetic iPhone McSweeney's, wolf Cosby sweater +1 banh mi. Disrupt drinking vinegar mixtape Williamsburg dreamcatcher, farm-to-table Tumblr. Lo-fi selfies ugh, polaroid wayfarers kitsch Schlitz retro mixtape flexitarian selvage PBR Austin trust fund. Flexitarian Blue Bottle shabby chic Helvetica sartorial. Sriracha Pinterest keffiyeh mlkshk 90's. PBR Tumblr organic, farm-to-table mixtape butcher Truffaut crucifix PBR&B kogi."
+
+rb:
+  name: Rettungsboot
+  description: "Bacon ipsum dolor sit amet magna veniam esse, cillum consequat qui pariatur. Sausage rump sed ground round ut dolor fugiat drumstick duis pork voluptate. Sed cow nulla frankfurter venison, ground round ribeye excepteur strip steak magna occaecat labore veniam. Elit andouille tail adipisicing esse ullamco sausage tenderloin beef ribs in cupidatat laboris pastrami chuck pork loin."
