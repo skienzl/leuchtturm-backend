@@ -20,7 +20,8 @@ class Region < ActiveRecord::Base
 
   validate :list_consistency_check
 
-  def list_consistency_check
-    self.collection.check_list_consistency
-  end
+  private
+    def list_consistency_check
+      self.collection.check_list_consistency
+    end
 end
