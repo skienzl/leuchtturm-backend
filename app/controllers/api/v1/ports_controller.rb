@@ -3,7 +3,7 @@ class Api::V1::PortsController < Api::V1::ApiController
 
   # GET /ports
   def index
-    @ports = Port.all
+    @ports = Port.where(activity_id: params[:activity_id])
   end
 
   # GET /ports/1

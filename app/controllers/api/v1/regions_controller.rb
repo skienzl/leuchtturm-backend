@@ -2,9 +2,8 @@ class Api::V1::RegionsController < Api::V1::ApiController
   before_action :set_region, only: [:show, :update, :destroy]
 
   # GET /regions
-  # GET /regions.json
   def index
-    @regions = Region.all
+    @regions = Region.where(collection_id: params[:collection_id])
   end
 
   # GET /regions/1

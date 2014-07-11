@@ -3,7 +3,7 @@ class Api::V1::TasksController < Api::V1::ApiController
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    @tasks = Task.where(region_id: params[:region_id])
   end
 
   # GET /tasks/1
