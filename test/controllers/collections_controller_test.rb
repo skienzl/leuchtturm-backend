@@ -18,7 +18,7 @@ class CollectionsControllerTest < ActionController::TestCase
 
   test "should create collection" do
     assert_difference('Collection.count') do
-      post :create, collection: { description: @collection.description, name: @collection.name }
+      post :create, collection: { description: @collection.description, name: @collection.name, harbor_id: @collection.harbor_id }
     end
 
     assert_redirected_to collection_path(assigns(:collection))

@@ -8,4 +8,8 @@ class CollectionTest < ActiveSupport::TestCase
     assert schmitten.harbor == zell
   end
 
+  test "should fail with broken list" do
+    assert false
+  end
+
 end

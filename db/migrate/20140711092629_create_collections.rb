@@ -3,7 +3,7 @@ class CreateCollections < ActiveRecord::Migration
     create_table :collections do |t|
       t.string :name, null: false
       t.text :description
-      t.integer :harbor_id
+      t.integer :harbor_id, null: false
 
       t.timestamps
     end

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711092629) do
+ActiveRecord::Schema.define(version: 20140711094311) do
 
   create_table "collections", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
-    t.integer  "harbor_id"
+    t.integer  "harbor_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +24,24 @@ ActiveRecord::Schema.define(version: 20140711092629) do
   create_table "harbors", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", force: true do |t|
+    t.string   "name",          null: false
+    t.text     "description"
+    t.integer  "next_id"
+    t.integer  "prev_id"
+    t.float    "lat",           null: false
+    t.float    "lon",           null: false
+    t.integer  "technology",    null: false
+    t.integer  "accuracy"
+    t.string   "identifier"
+    t.integer  "minor"
+    t.integer  "major"
+    t.text     "shape"
+    t.integer  "collection_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
