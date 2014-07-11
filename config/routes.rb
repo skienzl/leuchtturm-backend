@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   resources :tasks
   resources :harbors
   resources :collections
-  
+
 end

@@ -1,64 +1,30 @@
 class Api::V1::PortsController < Api::V1::ApiController
-  before_action :set_port, only: [:show, :edit, :update, :destroy]
+  before_action :set_port, only: [:show, :update, :destroy]
 
   # GET /ports
-  # GET /ports.json
   def index
     @ports = Port.all
   end
 
   # GET /ports/1
-  # GET /ports/1.json
   def show
   end
 
-  # GET /ports/new
-  def new
-    @port = Port.new
-  end
-
-  # GET /ports/1/edit
-  def edit
-  end
-
   # POST /ports
-  # POST /ports.json
   def create
     @port = Port.new(port_params)
-
-    respond_to do |format|
-      if @port.save
-        format.html { redirect_to @port, notice: 'Port was successfully created.' }
-        format.json { render :show, status: :created, location: @port }
-      else
-        format.html { render :new }
-        format.json { render json: @port.errors, status: :unprocessable_entity }
-      end
-    end
+    create_save_with_response(@port)
   end
 
   # PATCH/PUT /ports/1
-  # PATCH/PUT /ports/1.json
   def update
-    respond_to do |format|
-      if @port.update(port_params)
-        format.html { redirect_to @port, notice: 'Port was successfully updated.' }
-        format.json { render :show, status: :ok, location: @port }
-      else
-        format.html { render :edit }
-        format.json { render json: @port.errors, status: :unprocessable_entity }
-      end
-    end
+    update_with_response(@port, port_params)
   end
 
   # DELETE /ports/1
-  # DELETE /ports/1.json
   def destroy
     @port.destroy
-    respond_to do |format|
-      format.html { redirect_to ports_url, notice: 'Port was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private

@@ -1,64 +1,30 @@
 class Api::V1::HarborsController < Api::V1::ApiController
-  before_action :set_harbor, only: [:show, :edit, :update, :destroy]
+  before_action :set_harbor, only: [:show, :update, :destroy]
 
   # GET /harbors
-  # GET /harbors.json
   def index
     @harbors = Harbor.all
   end
 
   # GET /harbors/1
-  # GET /harbors/1.json
   def show
   end
 
-  # GET /harbors/new
-  def new
-    @harbor = Harbor.new
-  end
-
-  # GET /harbors/1/edit
-  def edit
-  end
-
   # POST /harbors
-  # POST /harbors.json
   def create
     @harbor = Harbor.new(harbor_params)
-
-    respond_to do |format|
-      if @harbor.save
-        format.html { redirect_to @harbor, notice: 'Harbor was successfully created.' }
-        format.json { render :show, status: :created, location: @harbor }
-      else
-        format.html { render :new }
-        format.json { render json: @harbor.errors, status: :unprocessable_entity }
-      end
-    end
+    create_save_with_response(@harbor)
   end
 
   # PATCH/PUT /harbors/1
-  # PATCH/PUT /harbors/1.json
   def update
-    respond_to do |format|
-      if @harbor.update(harbor_params)
-        format.html { redirect_to @harbor, notice: 'Harbor was successfully updated.' }
-        format.json { render :show, status: :ok, location: @harbor }
-      else
-        format.html { render :edit }
-        format.json { render json: @harbor.errors, status: :unprocessable_entity }
-      end
-    end
+    update_with_response(@harbor, harbor_params)
   end
 
   # DELETE /harbors/1
-  # DELETE /harbors/1.json
   def destroy
     @harbor.destroy
-    respond_to do |format|
-      format.html { redirect_to harbors_url, notice: 'Harbor was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private
