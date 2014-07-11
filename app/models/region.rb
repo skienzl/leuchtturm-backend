@@ -16,6 +16,7 @@ class Region < ActiveRecord::Base
   belongs_to :collection
   has_one :previous, class_name: "Region", foreign_key: "next_id"
   has_one :next, class_name: "Region", foreign_key: "prev_id"
+  has_one :task
 
   validate :list_consistency_check
 

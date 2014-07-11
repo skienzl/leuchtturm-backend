@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beacontask1:
+  name: Beacon Task 1
+  description:
+  region: beacon1
+
+beacontask2:
+  name: Beacon Task 2
+  description:
+  region: beacon2
+
+beacontask3:
+  name: Beacon Task 3
+  description:
+  region: beacon3
+
+schmitten1:
+  name: Schmitten Task 1
+  description:
+  region: schmitten1
+
+schmitten2:
+  name: Schmitten Task 2
+  description:
+  region: schmitten2
+
+schmitten3:
+  name: Schmitten Task 3
+  description:
+  region: schmitten3
