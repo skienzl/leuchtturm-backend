@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711124635) do
+ActiveRecord::Schema.define(version: 20140711125613) do
 
   create_table "activities", force: true do |t|
     t.string   "identifier",  null: false
@@ -37,6 +37,23 @@ ActiveRecord::Schema.define(version: 20140711124635) do
     t.datetime "updated_at"
   end
 
+  create_table "ports", force: true do |t|
+    t.integer  "data_type",                   null: false
+    t.integer  "port_type",                   null: false
+    t.boolean  "is_optional", default: false
+    t.integer  "activity_id",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "properties", force: true do |t|
+    t.string   "key",         null: false
+    t.string   "value",       null: false
+    t.integer  "activity_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "regions", force: true do |t|
     t.string   "name",          null: false
     t.text     "description"
@@ -58,7 +75,7 @@ ActiveRecord::Schema.define(version: 20140711124635) do
   create_table "tasks", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
-    t.integer  "region_id"
+    t.integer  "region_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

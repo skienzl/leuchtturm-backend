@@ -1,0 +1,33 @@
+<%= form_for(@port) do |f| %>
+  <% if @port.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@port.errors.count, "error") %> prohibited this port from being saved:</h2>
+
+      <ul>
+      <% @port.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_type %><br>
+    <%= f.number_field :data_type %>
+  </div>
+  <div class="field">
+    <%= f.label :port_type %><br>
+    <%= f.number_field :port_type %>
+  </div>
+  <div class="field">
+    <%= f.label :is_optional %><br>
+    <%= f.check_box :is_optional %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_id %><br>
+    <%= f.number_field :activity_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

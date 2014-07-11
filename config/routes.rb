@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :properties
+
+  resources :ports
+
   resources :activities
 
   resources :tasks
