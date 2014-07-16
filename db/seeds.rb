@@ -143,5 +143,203 @@ schmitten2.previous = schmitten1
 
 schmitten3.previous = schmitten2
 
+# TASKS
+
+schmitten1_task = Task.create({
+    name: "Add Server Log",
+    description: "Adds an entry in the website database to get a user counting",
+    region: schmitten1
+})
+
+schmitten2_task = Task.create({
+    name: "Facebook Post Checkin",
+    description: "Post a checkin on Facebook",
+    region: schmitten2
+})
+
+schmitten3_task = Task.create({
+    name: "Picture on Twitter",
+    description: "User should take picture and uploads it to the server which tweets it on the Zell account.",
+    region: schmitten3
+})
+
+# ACTIVITIES
+
+add_server_log = Activity.create({
+    identifier: "activity_joker",
+    name: "Add Server Log",
+    description: "Adds an entry in the website database to get a user counting",
+    task: schmitten1_task
+})
+
+facebooke_post_checking = Activity.create({
+    identifier: "activity_facebook_post_checkin",
+    name: "User posts a checkin on Facebook",
+    description: "Adds an entry in the website database to get a user counting",
+    task: schmitten2_task
+})
+
+notifiy_user  = Activity.create({
+    identifier: "activity_notifiy_user",
+    name: "Notification",
+    description: "User gets a notification on the device",
+    task: schmitten3_task
+})
+
+take_picture  = Activity.create({
+    identifier: "activity_make_picture",
+    name: "Take a picture",
+    description: "User should take a picture",
+    task: schmitten3_task
+})
+
+upload_to_server = Activity.create({
+    identifier: "activity_server_upload",
+    name: "Upload to Server",
+    description: "Client upload content to server",
+    task: schmitten3_task
+})
+
+server_tweets = Activity.create({
+    identifier: "activity_server_tweets",
+    name: "Server tweets",
+    description: "Server tweets with the provider account",
+    task: schmitten3_task
+})
+
+# PORTS
+
+add_server_log_in_content_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: add_server_log
+})
+
+add_server_log_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: add_server_log
+})
+
+facebooke_post_checking_in_content_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: facebooke_post_checking
+})
+
+facebooke_post_checking_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: facebooke_post_checking
+})
+
+notifiy_user_in_content_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: notifiy_user
+})
+
+notifiy_user_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: notifiy_user
+})
+
+take_picture_in_content_string = Port.create({
+    data_type: DataType::INTEGER,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: take_picture
+})
+
+take_picture_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: take_picture
+})
+
+take_picture_proxy_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::PROXY,
+    is_optional: false,
+    activity: take_picture
+})
+
+upload_to_server_in_content_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: upload_to_server
+})
+
+upload_to_server_in_notification_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: upload_to_server
+})
+
+upload_to_server_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: upload_to_server
+})
+
+server_tweets_in_content_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::IN,
+    is_optional: false,
+    activity: server_tweets
+})
+
+server_tweets_out_response_string = Port.create({
+    data_type: DataType::STRING,
+    port_type: PortType::OUT,
+    is_optional: false,
+    activity: server_tweets
+})
+
+# Mapping
+
+schmitten1_task_mapping = Mapping.create({
+    in: null,
+    out: add_server_log_out_response_string
+})
+
+schmitten2_task_mapping = Mapping.create({
+    in: null,
+    out: facebooke_post_checking_out_response_string
+})
+
+schmitten3_task_mapping_1 = Mapping.create({
+    in: null,
+    out: notifiy_user_out_response_string
+})
+
+schmitten3_task_mapping_2 = Mapping.create({
+    in: notifiy_user_out_response_string,
+    out: take_picture_proxy_response_string,
+})
+
+schmitten3_task_mapping_3 = Mapping.create({
+    in: take_picture_out_response_string,
+    out: upload_to_server_in_content_string,
+})
+
+schmitten3_task_mapping_3 = Mapping.create({
+    in: upload_to_server_out_response_string,
+    out: server_tweets_in_content_string,
+})
+
+
+
 
 
