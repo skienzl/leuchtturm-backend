@@ -1,6 +1,7 @@
 class Mapping < ActiveRecord::Base
   has_one :in, class_name: "Port", foreign_key: "in_id"
   has_one :out, class_name: "Port", foreign_key: "out_id"
+  belongs_to :task
 
   validate :validate_port_types, :validate_port_activities
 

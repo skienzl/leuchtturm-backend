@@ -10,10 +10,10 @@ Rails.application.routes.draw do
           resources :regions do
             resources :tasks do
               resources :activities do
-                resources :mappings
                 resources :properties
                 resources :ports
               end
+              resources :mappings
             end
           end
         end

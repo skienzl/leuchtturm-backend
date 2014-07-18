@@ -57,13 +57,13 @@ json.collections @harbor.collections do |collection|
           #json.updated_at port.updated_at
         end
 
-        #json.mappings activity.mappings do |mapping|
-          #json.in mapping.in_id
-          #json.out mapping.out_id
-          #json.created_at mapping.created_at
-          #json.updated_at mapping.updated_at
-        #end
+      end
 
+      json.mappings region.task.mappings do |mapping|
+        json.in mapping.in_id
+        json.out mapping.out_id
+        #json.created_at mapping.created_at
+        #json.updated_at mapping.updated_at
       end
 
     end

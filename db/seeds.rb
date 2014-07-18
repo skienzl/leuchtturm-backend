@@ -310,31 +310,37 @@ server_tweets_out_response_string = Port.create({
 # Mapping
 
 Mapping.create({
+    task: add_server_log_out_response_string.activity.task,
     in_id: nil,
     out_id: add_server_log_out_response_string.id
 })
 
 Mapping.create({
+    task: facebooke_post_checking_out_response_string.activity.task,
     in_id: nil,
     out_id: facebooke_post_checking_out_response_string.id
 })
 
 Mapping.create({
+    task: notifiy_user_out_response_string.activity.task,
     in_id: nil,
     out_id: notifiy_user_out_response_string.id
 })
 
 Mapping.create({
+    task: notifiy_user_out_response_string.activity.task,
     in_id: notifiy_user_out_response_string.id,
     out_id: take_picture_proxy_response_string.id,
 })
 
 Mapping.create({
+    task: take_picture_out_response_string.activity.task,
     in_id: take_picture_out_response_string.id,
     out_id: upload_to_server_in_content_string.id,
 })
 
 Mapping.create({
+    task: upload_to_server_out_response_string.activity.task,
     in_id: upload_to_server_out_response_string.id,
     out_id: server_tweets_in_content_string.id,
 })

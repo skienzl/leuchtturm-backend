@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140711130706) do
   create_table "mappings", force: true do |t|
     t.integer  "in_id"
     t.integer  "out_id"
+    t.integer  "task_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
