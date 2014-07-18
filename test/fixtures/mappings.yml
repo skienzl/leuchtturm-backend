@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  task_id: 1
   in_id: 1
   out_id: 1
 
 two:
+  task_id: 1
   in_id: 1
   out_id: 1
