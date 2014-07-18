@@ -21,13 +21,4 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :activities
-  resources :mappings
-  resources :properties
-  resources :ports
-  resources :regions
-  resources :tasks
-  resources :harbors
-  resources :collections
-
 end
