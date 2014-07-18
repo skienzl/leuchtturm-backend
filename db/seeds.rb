@@ -309,37 +309,32 @@ server_tweets_out_response_string = Port.create({
 
 # Mapping
 
-schmitten1_task_mapping = Mapping.create({
-    in: null,
-    out: add_server_log_out_response_string
+Mapping.create({
+    in_id: nil,
+    out_id: add_server_log_out_response_string.id
 })
 
-schmitten2_task_mapping = Mapping.create({
-    in: null,
-    out: facebooke_post_checking_out_response_string
+Mapping.create({
+    in_id: nil,
+    out_id: facebooke_post_checking_out_response_string.id
 })
 
-schmitten3_task_mapping_1 = Mapping.create({
-    in: null,
-    out: notifiy_user_out_response_string
+Mapping.create({
+    in_id: nil,
+    out_id: notifiy_user_out_response_string.id
 })
 
-schmitten3_task_mapping_2 = Mapping.create({
-    in: notifiy_user_out_response_string,
-    out: take_picture_proxy_response_string,
+Mapping.create({
+    in_id: notifiy_user_out_response_string.id,
+    out_id: take_picture_proxy_response_string.id,
 })
 
-schmitten3_task_mapping_3 = Mapping.create({
-    in: take_picture_out_response_string,
-    out: upload_to_server_in_content_string,
+Mapping.create({
+    in_id: take_picture_out_response_string.id,
+    out_id: upload_to_server_in_content_string.id,
 })
 
-schmitten3_task_mapping_3 = Mapping.create({
-    in: upload_to_server_out_response_string,
-    out: server_tweets_in_content_string,
+Mapping.create({
+    in_id: upload_to_server_out_response_string.id,
+    out_id: server_tweets_in_content_string.id,
 })
-
-
-
-
-
