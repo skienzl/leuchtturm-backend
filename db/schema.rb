@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711130706) do
+ActiveRecord::Schema.define(version: 20140815112048) do
 
   create_table "activities", force: true do |t|
     t.string   "identifier",  null: false
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 20140711130706) do
     t.integer  "major"
     t.text     "shape"
     t.integer  "collection_id", null: false
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_properties", force: true do |t|
+    t.integer  "task_id"
+    t.integer  "region_id"
+    t.string   "key"
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140711130706) do
   create_table "tasks", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
-    t.integer  "region_id",   null: false
+    t.integer  "harbor_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

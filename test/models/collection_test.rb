@@ -8,6 +8,11 @@ class CollectionTest < ActiveSupport::TestCase
     assert schmitten.harbor == zell
   end
 
+  test "should have regions" do
+    schmitten = collections(:schmitten)
+    assert schmitten.regions.length == 3
+  end
+
   test "should fail with broken list" do
     #assert false
   end

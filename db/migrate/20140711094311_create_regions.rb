@@ -14,6 +14,7 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :major
       t.text :shape
       t.integer :collection_id, null: false
+      t.integer :task_id
       t.timestamps
     end
   end

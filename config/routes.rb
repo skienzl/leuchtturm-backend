@@ -7,15 +7,14 @@ Rails.application.routes.draw do
 
       resources :harbors do
         resources :collections do
-          resources :regions do
-            resources :tasks do
-              resources :activities do
-                resources :properties
-                resources :ports
-              end
-              resources :mappings
-            end
+          resources :regions
+        end
+        resources :tasks do
+          resources :activities do
+            resources :properties
+            resources :ports
           end
+          resources :mappings
         end
       end
     end

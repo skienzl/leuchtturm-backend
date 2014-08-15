@@ -12,6 +12,7 @@ beacon1:
   major: 1
   shape:
   collection: room1
+  task: task_beacontask1
 
 beacon2:
   name: Beacon 2
@@ -25,6 +26,7 @@ beacon2:
   major: 1
   shape:
   collection: room2
+  task: task_beacontask2
 
 beacon3:
   name: Beacon 3
@@ -38,6 +40,7 @@ beacon3:
   major: 1
   shape:
   collection: room3
+  task: task_beacontask3
 
 schmitten1:
   name: Schmitten Point of Interest 1
@@ -51,6 +54,7 @@ schmitten1:
   major:
   shape:
   collection: schmitten
+  task: task_schmitten1
 
 schmitten2:
   name: Schmitten Point of Interest 2
@@ -64,6 +68,7 @@ schmitten2:
   major:
   shape:
   collection: schmitten
+  task: task_schmitten1
 
 schmitten3:
   name: Schmitten Point of Interest 3
@@ -77,3 +82,4 @@ schmitten3:
   major:
   shape:
   collection: schmitten
+  task: task_schmitten1

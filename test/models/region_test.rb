@@ -26,4 +26,14 @@ class RegionTest < ActiveSupport::TestCase
   test "should fail with broken list" do
     #assert false
   end
+
+  test "should have task" do
+    region = regions(:beacon1)
+    assert !region.task.nil?, "Should have task"
+  end
+
+  test "should have tasks properties" do
+    region = regions(:beacon1)
+    assert region.task_properties.length == 1, "Should have task property"
+  end
 end
