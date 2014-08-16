@@ -6,6 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# USERS
+
+User.create([
+                {:email => "mgratzer@gmail.com",
+                 :name => "Martin Gratzer",
+                 :password => "letmein",
+                 :password_confirmation => "letmein",
+                 :role => 1},
+
+                {:email => "kienzlstefan@gmail.com",
+                 :name => "Stefan Kienzl",
+                 :password => "letmein",
+                 :password_confirmation => "letmein",
+                 :role => 1},
+
+                {:email => "leuchtturm@topmind.eu",
+                 :name => "Käptn Blaubär",
+                 :password => "letmein",
+                 :password_confirmation => "letmein",
+                 :role => 0},
+            ])
+
 # HARBORS
 
 zell = Harbor.create({
