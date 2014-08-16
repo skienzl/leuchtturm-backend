@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140815112048) do
 
   create_table "properties", force: true do |t|
     t.string   "key",         null: false
+    t.string   "description"
     t.integer  "activity_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -14,7 +14,7 @@ json.tasks @harbor.tasks do |task|
 
     json.properties activity.properties do |property|
       json.key property.key
-      json.value property.value
+      json.value property.description
       #json.created_at property.created_at
       #json.updated_at property.updated_at
     end
