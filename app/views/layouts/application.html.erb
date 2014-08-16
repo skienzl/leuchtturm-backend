@@ -45,9 +45,11 @@
         <div class="col-sm-3 col-md-2 sidebar">
 
           <% if user_signed_in? %>
+          <% if current_user.isAdmin %>
           <ul class="nav nav-sidebar">
             <li><a href="/oauth/applications">Applications</a></li>
           </ul>
+          <% end %>
 
           <ul class="nav nav-sidebar">
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
