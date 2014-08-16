@@ -2,10 +2,8 @@
 
 one:
   key: MyString
-  value: MyString
   activity_id: 1
 
 two:
   key: MyString
-  value: MyString
   activity_id: 1
