@@ -2,8 +2,8 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
-  devise_for :users
   root to: "home#index"
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   namespace :api, defaults: {format: :json} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do

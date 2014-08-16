@@ -1,4 +1,5 @@
 class Api::V1::ApiController < ApplicationController
+  before_action :authenticate_user!
   protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/vnd.myapp.v1' }
 
   def create_save_with_response(object)
