@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+# bootstrap
+gem 'bootstrap-sass'
 
 # API
 gem 'jbuilder', '~> 2.0'
