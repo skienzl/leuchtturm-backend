@@ -1,5 +1,5 @@
-class Api::V1::ApiController < ApplicationController
-  before_action :doorkeeper_authorize!
+class Api::V1::ApiController < ActionController::Base
+  doorkeeper_for :all
   protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/vnd.myapp.v1' }
 
   def create_save_with_response(object)
@@ -18,7 +18,5 @@ class Api::V1::ApiController < ApplicationController
     end
   end
 
-  def current_resource_owner
-    User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
-  end
+
 end
