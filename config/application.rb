@@ -21,5 +21,16 @@ module Leuchtturm
     # config.i18n.default_locale = :de
     config.generators.stylesheets = false
     config.generators.javascripts = false
+
+    config.to_prepare do
+      # Only Applications list
+      Doorkeeper::ApplicationsController.layout "application"
+
+      # Only Authorization endpoint
+      #Doorkeeper::AuthorizationsController.layout "my_layout"
+
+      # Only Authorized Applications
+      #Doorkeeper::AuthorizedApplicationsController.layout "my_layout"
+    end
   end
 end
