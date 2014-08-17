@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :check_admin_or_own_user
 
   def index
     @users = User.all
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -22,21 +24,27 @@ class UsersController < ApplicationController
   end
 
   def update
+    # users should not be able to change their role
+    role = Integer(user_params[:role]) rescue nil
+    if role.nil? || (role != @user.role && !current_user.is_admin?)
+      admin_required
+      return
+    end
+
+    # allow update without password
     if user_params[:password].blank?
       user_params.delete(:password)
       user_params.delete(:password_confirmation)
     end
 
-    # http://andowebsit.es/blog/noteslog.com/post/how-to-manage-users-in-rails-4-using-devise/
     successfully_updated = if needs_password?(@user, user_params)
                              @user.update(user_params)
                            else
                              @user.update_without_password(user_params)
                            end
 
-
     if successfully_updated
-      redirect_to users_path, notice: 'User was successfully updated.'
+      redirect_to edit_user_path(@user), notice: 'User was successfully updated.'
     else
       render action: 'edit'
     end
@@ -60,4 +68,15 @@ class UsersController < ApplicationController
     def needs_password?(user, params)
       params[:password].present?
     end
+
+    def check_admin_or_own_user
+      if (@user.nil? || @user.id != current_user.id) && !current_user.is_admin?
+        admin_required
+      end
+    end
+
+    def admin_required
+      redirect_to root_path, alert: 'Admin privileges required.'
+    end
+
 end

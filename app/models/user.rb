@@ -13,12 +13,12 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  def isAdmin
+  def is_admin?
     return self.role == UserRole::ADMIN
   end
 
   def role_name
-    return isAdmin ? "Admin" : "User"
+    return is_admin? ? "Admin" : "User"
   end
 
 end

@@ -4,12 +4,12 @@ class UserTest < ActiveSupport::TestCase
 
   test "admin user should be admin" do
     admin = users(:admin)
-    assert admin.isAdmin
+    assert admin.is_admin?
   end
 
   test "default user should not be admin" do
     user = users(:user)
-    assert !user.isAdmin
+    assert !user.is_admin?
   end
 
   test "admin role name should be Admin" do
