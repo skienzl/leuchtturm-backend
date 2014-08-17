@@ -47,7 +47,8 @@
           <% if user_signed_in? %>
           <% if current_user.isAdmin %>
           <ul class="nav nav-sidebar">
-            <li><%= active_link_to('Applications', oauth_applications_url ) %></li>
+            <li><%= active_link_to 'Users', users_path %></li>
+            <li><%= active_link_to 'Applications', oauth_applications_path %></li>
           </ul>
           <% end %>
 

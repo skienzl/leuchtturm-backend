@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
     return self.role == UserRole::ADMIN
   end
 
+  def role_name
+    return isAdmin ? "Admin" : "User"
+  end
+
 end
