@@ -1,12 +1,16 @@
 class CreateTaskProperties < ActiveRecord::Migration
   def change
     create_table :task_properties do |t|
-      t.integer :task_id
-      t.integer :region_id
-      t.string :key
-      t.string :value
+      t.integer :task_id, null: false
+      t.integer :region_id, null: false
+      t.string :key, null: false
+      t.string :value, null: false
 
       t.timestamps
     end
+
+    add_index :task_properties, :key
+    add_index :task_properties, :task_id
+    add_index :task_properties, :region_id
   end
 end

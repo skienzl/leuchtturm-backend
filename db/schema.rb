@@ -14,28 +14,35 @@
 ActiveRecord::Schema.define(version: 20140816150410) do
 
   create_table "activities", force: true do |t|
-    t.string   "identifier",  null: false
-    t.string   "name",        null: false
-    t.text     "description"
-    t.integer  "task_id",     null: false
+    t.string   "identifier",               null: false
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
+    t.integer  "task_id",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "activities", ["identifier"], name: "index_activities_on_identifier", unique: true
+  add_index "activities", ["task_id"], name: "index_activities_on_task_id"
 
   create_table "collections", force: true do |t|
-    t.string   "name",        null: false
-    t.text     "description"
-    t.integer  "harbor_id",   null: false
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
+    t.integer  "harbor_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "collections", ["harbor_id"], name: "index_collections_on_harbor_id"
+
   create_table "harbors", force: true do |t|
-    t.string   "name",        null: false
-    t.text     "description"
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "harbors", ["name"], name: "index_harbors_on_name", unique: true
 
   create_table "mappings", force: true do |t|
     t.integer  "in_id"
@@ -44,6 +51,10 @@ ActiveRecord::Schema.define(version: 20140816150410) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "mappings", ["in_id"], name: "index_mappings_on_in_id"
+  add_index "mappings", ["out_id"], name: "index_mappings_on_out_id"
+  add_index "mappings", ["task_id"], name: "index_mappings_on_task_id"
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
@@ -87,55 +98,72 @@ ActiveRecord::Schema.define(version: 20140816150410) do
   create_table "ports", force: true do |t|
     t.integer  "data_type",                   null: false
     t.integer  "port_type",                   null: false
-    t.boolean  "is_optional", default: false
+    t.boolean  "is_optional", default: false, null: false
     t.integer  "activity_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "ports", ["activity_id"], name: "index_ports_on_activity_id"
+
   create_table "properties", force: true do |t|
-    t.string   "key",         null: false
-    t.string   "description"
-    t.integer  "activity_id", null: false
+    t.string   "key",                      null: false
+    t.string   "description", default: "", null: false
+    t.integer  "activity_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "properties", ["activity_id"], name: "index_properties_on_activity_id"
+  add_index "properties", ["key"], name: "index_properties_on_key"
+
   create_table "regions", force: true do |t|
-    t.string   "name",          null: false
-    t.text     "description"
+    t.string   "name",                       null: false
+    t.text     "description",   default: "", null: false
     t.integer  "next_id"
     t.integer  "prev_id"
-    t.float    "lat",           null: false
-    t.float    "lon",           null: false
-    t.integer  "technology",    null: false
-    t.integer  "accuracy"
+    t.float    "lat",                        null: false
+    t.float    "lon",                        null: false
+    t.integer  "technology",                 null: false
+    t.integer  "accuracy",      default: 0,  null: false
     t.string   "identifier"
     t.integer  "minor"
     t.integer  "major"
     t.text     "shape"
-    t.integer  "collection_id", null: false
+    t.integer  "collection_id",              null: false
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "regions", ["collection_id"], name: "index_regions_on_collection_id"
+  add_index "regions", ["identifier"], name: "index_regions_on_identifier"
+  add_index "regions", ["lat"], name: "index_regions_on_lat"
+  add_index "regions", ["lon"], name: "index_regions_on_lon"
+  add_index "regions", ["task_id"], name: "index_regions_on_task_id"
 
   create_table "task_properties", force: true do |t|
-    t.integer  "task_id"
-    t.integer  "region_id"
-    t.string   "key"
-    t.string   "value"
+    t.integer  "task_id",    null: false
+    t.integer  "region_id",  null: false
+    t.string   "key",        null: false
+    t.string   "value",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "task_properties", ["key"], name: "index_task_properties_on_key"
+  add_index "task_properties", ["region_id"], name: "index_task_properties_on_region_id"
+  add_index "task_properties", ["task_id"], name: "index_task_properties_on_task_id"
+
   create_table "tasks", force: true do |t|
-    t.string   "name",        null: false
-    t.text     "description"
-    t.integer  "harbor_id",   null: false
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
+    t.integer  "harbor_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tasks", ["harbor_id"], name: "index_tasks_on_harbor_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

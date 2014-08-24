@@ -2,30 +2,24 @@
 
 task_beacontask1:
   name: Beacon Task 1
-  description:
   harbor: rb
 
 task_beacontask2:
   name: Beacon Task 2
-  description:
   harbor: rb
 
 task_beacontask3:
   name: Beacon Task 3
-  description:
   harbor: rb
 
 task_schmitten1:
   name: Schmitten Task 1
-  description:
   harbor: zell
 
 task_schmitten2:
   name: Schmitten Task 2
-  description:
   harbor: zell
 
 task_schmitten3:
   name: Schmitten Task 3
-  description:
   harbor: zell
