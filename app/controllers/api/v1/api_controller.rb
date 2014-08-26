@@ -4,7 +4,7 @@ class Api::V1::ApiController < ActionController::Base
 
   def create_save_with_response(object)
     if object.save
-      render :show, status: :created, location: object
+      render json: object, status: :created
     else
       render json: object.errors, status: :unprocessable_entity
     end
@@ -12,13 +12,10 @@ class Api::V1::ApiController < ActionController::Base
 
   def update_with_response(object, parameters)
     if object.update(parameters)
-      render :show, status: :ok, location: object
+      render json: object, status: :ok
     else
       render json: object.errors, status: :unprocessable_entity
     end
   end
-
-
-
 
 end
