@@ -1,5 +1,5 @@
 class Api::V1::ApiController < ActionController::Base
-  doorkeeper_for :all
+  #doorkeeper_for :all
   protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/vnd.myapp.v1' }
 
   def create_save_with_response(object)
@@ -17,6 +17,8 @@ class Api::V1::ApiController < ActionController::Base
       render json: object.errors, status: :unprocessable_entity
     end
   end
+
+
 
 
 end

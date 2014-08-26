@@ -22,6 +22,8 @@ module Leuchtturm
     config.generators.stylesheets = false
     config.generators.javascripts = false
 
+   
+
     config.to_prepare do
       # Only Applications list
       Doorkeeper::ApplicationsController.layout "application"
