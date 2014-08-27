@@ -39,12 +39,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # TODO: configure for production
-  config.action_dispatch.default_headers.merge!({
-      'Access-Control-Allow-Origin' => '*',
-      'Access-Control-Request-Method' => '*'
-    })
-
-  # TODO: configure for production
   config.middleware.use Rack::Cors do
     allow do
       origins '*'
