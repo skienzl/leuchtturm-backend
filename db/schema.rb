@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20140816150410) do
     t.float    "lat",                        null: false
     t.float    "lon",                        null: false
     t.integer  "technology",                 null: false
-    t.integer  "accuracy",      default: 0,  null: false
+    t.integer  "accuracy"
     t.string   "identifier"
     t.integer  "minor"
     t.integer  "major"

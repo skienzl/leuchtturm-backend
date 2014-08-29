@@ -5,7 +5,7 @@ class Collection < ActiveRecord::Base
   validates :harbor, presence: true
 
   validates :name, presence: true
-  validates :name, length: { minimum: 5, maximum: 20 }
+  validates :name, length: { :in => 5..20 }
 
   def check_list_consistency
     true
@@ -16,6 +16,7 @@ class Collection < ActiveRecord::Base
   end
 
   def tail
+
   end
 
 end

@@ -8,7 +8,7 @@ class CreateRegions < ActiveRecord::Migration
       t.float :lat, null: false
       t.float :lon, null: false
       t.integer :technology, null: false
-      t.integer :accuracy, null:false, default: 0
+      t.integer :accuracy
       t.string :identifier
       t.integer :minor
       t.integer :major

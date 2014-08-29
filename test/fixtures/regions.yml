@@ -83,3 +83,23 @@ schmitten3:
   shape:
   collection: schmitten
   task: task_schmitten1
+
+nfc1:
+  name: NCF 1
+  description: NFC Test
+  lat: 46.62543
+  lon: 14.31136
+  technology: 2
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  collection: room1
+  task: task_beacontask1
+
+qr1:
+  name: QR 1
+  description: QR Test
+  lat: 46.62543
+  lon: 14.31136
+  technology: 3
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  collection: room1
+  task: task_beacontask1

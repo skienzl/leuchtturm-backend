@@ -14,6 +14,12 @@ class CollectionTest < ActiveSupport::TestCase
     assert collection.errors[:name].any?
   end
 
+  test "harbor required" do
+    collection = Collection.new()
+    assert !collection.valid?
+    assert collection.errors[:harbor].any?
+  end
+
   test "name length needs to be greater than 5" do
     collection = Collection.new(name: "yxz")
     assert !collection.valid?
