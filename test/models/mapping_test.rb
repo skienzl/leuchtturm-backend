@@ -84,4 +84,20 @@ class MappingTest < ActiveSupport::TestCase
     assert mapping.errors.full_messages.include?('Out has an incorrect port type')
   end
 
+  test "in port type can be proxy" do
+    task = tasks(:task_beacontask1)
+    port = ports(:one)
+    port.port_type = PortType::PROXY
+    mapping = Mapping.new(task: task, in: port)
+    assert mapping.valid?, mapping.errors.full_messages
+  end
+
+  test "out port type can be proxy" do
+    task = tasks(:task_beacontask1)
+    port = ports(:one)
+    port.port_type = PortType::PROXY
+    mapping = Mapping.new(task: task, out: port)
+    assert mapping.valid?, mapping.errors.full_messages
+  end
+
 end

@@ -22,11 +22,11 @@ class Mapping < ActiveRecord::Base
     end
 
     def validate_port_types
-      if !self.in.nil? && self.in.port_type != PortType::IN
+      if !self.in.nil? && ![PortType::IN, PortType::PROXY].include?(self.in.port_type)
         errors.add(:in, 'has an incorrect port type')
       end
 
-      if !self.out.nil? && self.out.port_type != PortType::OUT
+      if !self.out.nil? && ![PortType::OUT, PortType::PROXY].include?(self.out.port_type)
         errors.add(:out, 'has an incorrect port type')
       end
     end
