@@ -1,13 +1,27 @@
 require 'test_helper'
 
 class TaskPropertyTest < ActiveSupport::TestCase
-  test "should have task" do
-    property = task_properties(:region_task1)
-    assert property.task.name == "Beacon Task 1", "Should have task 'Beacon Task 1'"
+  test "task required" do
+    task_property = TaskProperty.new()
+    assert !task_property.valid?
+    assert task_property.errors[:task].any?
   end
 
-  test "should have region" do
-    property = task_properties(:region_task1)
-    assert property.region.name == "Beacon 1", "Should have region 'Beacon 1'"
+  test "region required" do
+    task_property = TaskProperty.new()
+    assert !task_property.valid?
+    assert task_property.errors[:region].any?
+  end
+
+  test "key required" do
+    task_property = TaskProperty.new()
+    assert !task_property.valid?
+    assert task_property.errors[:key].any?
+  end
+
+  test "value required" do
+    task_property = TaskProperty.new()
+    assert !task_property.valid?
+    assert task_property.errors[:value].any?
   end
 end
