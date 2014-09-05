@@ -37,10 +37,4 @@ class PropertyTest < ActiveSupport::TestCase
     assert property.errors[:key].any?
   end
 
-  test "key length needs to be smaller than 20" do
-    activity = activities(:one)
-    property = Property.new(key: "1234567891011121314151617181920", activity: activity)
-    assert !property.valid?
-    assert property.errors[:key].any?
-  end
 end

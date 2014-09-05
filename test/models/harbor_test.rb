@@ -28,10 +28,4 @@ class HarborTest < ActiveSupport::TestCase
     assert harbor.errors[:name].any?
   end
 
-  test "name length needs to be smaller than 20" do
-    harbor = Harbor.new(name: "1234567891011121314151617181920")
-    assert !harbor.valid?
-    assert harbor.errors[:name].any?
-  end
-
 end

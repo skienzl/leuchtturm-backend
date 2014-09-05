@@ -6,6 +6,6 @@ class Activity < ActiveRecord::Base
   validates :task, presence: true
   validates :identifier, presence: true
   validates :name, presence: true
-  validates :name, length: { :in => 5..20 }
+  validates :name, length: { minimum: 5 }
 
 end

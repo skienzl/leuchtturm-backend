@@ -4,6 +4,6 @@ class Property < ActiveRecord::Base
   validates :activity, presence: true
   validates :key, presence: true
   validates :key, uniqueness: true
-  validates :key, length: { :in => 5..20 }
+  validates :key, length: {  minimum: 5 }
 
 end

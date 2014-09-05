@@ -25,10 +25,4 @@ class TaskTest < ActiveSupport::TestCase
     assert task.errors[:name].any?
   end
 
-  test "name length needs to be smaller than 20" do
-    task = Task.new(name: "1234567891011121314151617181920")
-    assert !task.valid?
-    assert task.errors[:name].any?
-  end
-
 end

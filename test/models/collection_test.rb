@@ -26,12 +26,6 @@ class CollectionTest < ActiveSupport::TestCase
     assert collection.errors[:name].any?
   end
 
-  test "name length needs to be smaller than 20" do
-    collection = Collection.new(name: "1234567891011121314151617181920")
-    assert !collection.valid?
-    assert collection.errors[:name].any?
-  end
-
   test "should have harbor" do
     zell = harbors(:zell)
     schmitten = collections(:schmitten)

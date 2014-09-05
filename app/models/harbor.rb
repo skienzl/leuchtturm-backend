@@ -4,6 +4,6 @@ class Harbor < ActiveRecord::Base
 
   validates :name, presence: true
   validates :name, uniqueness: true
-  validates :name, length: { :in => 5..20 }
+  validates :name, length: { minimum: 5 }
 
 end

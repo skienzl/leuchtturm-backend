@@ -32,10 +32,4 @@ class ActivityTest < ActiveSupport::TestCase
     assert activity.errors[:name].any?
   end
 
-  test "name length needs to be smaller than 20" do
-    task = tasks(:task_beacontask1)
-    activity = Activity.new(name: "1234567891011121314151617181920", task: task, identifier: "abcdefg")
-    assert !activity.valid?
-    assert activity.errors[:name].any?
-  end
 end
