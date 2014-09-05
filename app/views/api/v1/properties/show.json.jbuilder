@@ -1,1 +1,3 @@
-json.extract! @property, :id, :key, :value, :activity_id, :created_at, :updated_at
+json.property do |json|
+  json.partial! 'property', property: @property
+end

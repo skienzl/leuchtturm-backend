@@ -3,7 +3,7 @@ class Api::V1::MappingsController < Api::V1::ApiController
 
   # GET /mappings
   def index
-    @mappings = Mapping.all
+    @mappings = []
   end
 
   # GET /mappings/1

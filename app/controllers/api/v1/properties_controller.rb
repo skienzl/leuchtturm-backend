@@ -3,7 +3,7 @@ class Api::V1::PropertiesController < Api::V1::ApiController
 
   # GET /properties
   def index
-    @properties = Property.where(activity_id: params[:activity_id])
+    @properties = []
   end
 
   # GET /properties/1

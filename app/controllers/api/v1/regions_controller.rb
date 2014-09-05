@@ -3,7 +3,7 @@ class Api::V1::RegionsController < Api::V1::ApiController
 
   # GET /regions
   def index
-    @regions = Region.where(collection_id: params[:collection_id])
+    @regions = []
   end
 
   # GET /regions/1

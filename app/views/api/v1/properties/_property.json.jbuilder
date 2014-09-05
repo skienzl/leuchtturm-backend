@@ -1,0 +1,1 @@
+json.extract! @property, :id, :key, :value, :activity_id
