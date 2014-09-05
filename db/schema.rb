@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816150410) do
+ActiveRecord::Schema.define(version: 20140905144031) do
 
   create_table "activities", force: true do |t|
     t.string   "identifier",               null: false
