@@ -1,1 +1,1 @@
-json.extract! @mapping, :id, :in_id, :out_id, :created_at, :updated_at
+json.partial! 'mapping', mapping: @mapping
