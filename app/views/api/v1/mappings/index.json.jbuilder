@@ -1,1 +1,0 @@
-json.array! @mappings, partial: 'mapping', as: :mapping

@@ -12,13 +12,13 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
 
       resources :harbors 
-      resources :collections 
-      resources :regions
-      resources :tasks 
-      resources :activities 
-      resources :properties
-      resources :ports
-      resources :mappings
+      resources :collections, :except => :index
+      resources :regions,     :except => :index
+      resources :tasks,       :except => :index
+      resources :activities,  :except => :index
+      resources :properties,  :except => :index
+      resources :ports,       :except => :index
+      resources :mappings,    :except => :index
+    end
   end
-end
 end

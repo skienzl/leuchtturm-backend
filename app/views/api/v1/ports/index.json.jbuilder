@@ -1,1 +1,0 @@
-json.array! @ports, partial: 'port', as: :port

@@ -3,7 +3,7 @@ class Api::V1::ActivitiesController < Api::V1::ApiController
 
   # GET /activities
   def index
-    @activities = Activity.where(task_id: params[:task_id])
+    @activities = []
   end
 
   # GET /activities/1

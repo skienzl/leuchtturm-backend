@@ -3,7 +3,7 @@ class Api::V1::CollectionsController < Api::V1::ApiController
 
   # GET /collections
   def index
-    @collections = Collection.where(harbor_id: params[:harbor_id])
+    @collections = []
   end
 
   # GET /collections/1
