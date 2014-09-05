@@ -1,1 +1,3 @@
-json.extract! @task, :id, :name, :description, :created_at, :updated_at
+json.task do |json|
+  json.partial! 'task', task: @task
+end
