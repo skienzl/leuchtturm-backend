@@ -17,7 +17,7 @@ class Api::V1::ApiController < ActionController::Base
 
   def create_save_with_response(object)
     if object.save
-      render json: object, status: :created
+      render json: {object.class.name.downcase => object}, status: :created
     else
       render json: {error: object.errors, code: ApiError::VALIDATION_FAILED}, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class Api::V1::ApiController < ActionController::Base
 
   def update_with_response(object, parameters)
     if object.update(parameters)
-      render json: object, status: :ok
+      render json: {object.class.name.downcase => object}, status: :ok
     else
       render json: {error: object.errors, code: ApiError::VALIDATION_FAILED}, status: :unprocessable_entity
     end
