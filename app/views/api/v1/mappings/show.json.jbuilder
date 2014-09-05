@@ -1,1 +1,3 @@
-json.partial! 'mapping', mapping: @mapping
+json.mapping do |json|
+  json.partial! 'mapping', mapping: @mapping
+end
