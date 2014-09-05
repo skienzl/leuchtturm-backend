@@ -19,7 +19,7 @@ class Api::V1::ApiController < ActionController::Base
     if object.save
       render json: {object.class.name.downcase => object}, status: :created
     else
-      render json: {error: object.errors, code: ApiError::VALIDATION_FAILED}, status: :unprocessable_entity
+      render json: error_response(object.errors, ApiError::VALIDATION_FAILED), status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class Api::V1::ApiController < ActionController::Base
     if object.update(parameters)
       render json: {object.class.name.downcase => object}, status: :ok
     else
-      render json: {error: object.errors, code: ApiError::VALIDATION_FAILED}, status: :unprocessable_entity
+      render json: error_response(object.errors, ApiError::VALIDATION_FAILED), status: :unprocessable_entity
     end
   end
 
@@ -36,4 +36,8 @@ class Api::V1::ApiController < ActionController::Base
       render json: {error: 'Object not found.', code: ApiError::NOT_FOUND}, status: :not_found
     end
 
+
+    def error_response(errors,code)
+      {error: {code: code, message: API_ERROR_CODES[code], info: errors}}
+    end
 end
