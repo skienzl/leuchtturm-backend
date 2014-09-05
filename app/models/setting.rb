@@ -1,4 +1,4 @@
-class TaskProperty < ActiveRecord::Base
+class Setting < ActiveRecord::Base
   belongs_to :region
 
   validates :region, presence: true
