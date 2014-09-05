@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       resources :properties,  :except => :index
       resources :ports,       :except => :index
       resources :mappings,    :except => :index
+      resources :settings,    :except => :index
+
     end
   end
 end

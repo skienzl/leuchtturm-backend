@@ -16,7 +16,7 @@ class Region < ActiveRecord::Base
   belongs_to :collection
   belongs_to :previous, class_name: 'Region', foreign_key: 'next_id'
   has_one :next, class_name: 'Region', foreign_key: 'prev_id'
-  has_many :task_properties
+  has_many :settings
   belongs_to :task
 
   validates :name, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816150410) do
+ActiveRecord::Schema.define(version: 20140905144031) do
 
   create_table "activities", force: true do |t|
     t.string   "identifier",               null: false
@@ -142,8 +142,7 @@ ActiveRecord::Schema.define(version: 20140816150410) do
   add_index "regions", ["lon"], name: "index_regions_on_lon"
   add_index "regions", ["task_id"], name: "index_regions_on_task_id"
 
-  create_table "task_properties", force: true do |t|
-    t.integer  "task_id",    null: false
+  create_table "settings", force: true do |t|
     t.integer  "region_id",  null: false
     t.string   "key",        null: false
     t.string   "value",      null: false
@@ -151,9 +150,8 @@ ActiveRecord::Schema.define(version: 20140816150410) do
     t.datetime "updated_at"
   end
 
-  add_index "task_properties", ["key"], name: "index_task_properties_on_key"
-  add_index "task_properties", ["region_id"], name: "index_task_properties_on_region_id"
-  add_index "task_properties", ["task_id"], name: "index_task_properties_on_task_id"
+  add_index "settings", ["key"], name: "index_settings_on_key"
+  add_index "settings", ["region_id"], name: "index_settings_on_region_id"
 
   create_table "tasks", force: true do |t|
     t.string   "name",                     null: false
