@@ -35,6 +35,6 @@ class Api::V1::RegionsController < Api::V1::ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def region_params
-      params.require(:region).permit(:name, :description, :next_id, :prev_id, :lat, :lon, :technology, :accuracy, :identifier, :minor, :major, :shape, :collection_id)
+      params.require(:region).permit(:name, :description, :next_id, :prev_id, :lat, :lon, :technology, :accuracy, :identifier, :minor, :major, :shape, :collection_id, :task_id, :lat, :lon, settings: [])
     end
 end
