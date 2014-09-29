@@ -30,7 +30,9 @@ class Api::V1::MappingsController < Api::V1::ApiController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mapping
-      @mapping = Mapping.find(params[:id])
+      Mapping.transaction do
+        @mapping = Mapping.all.includes(:properties, activities: [:ports, :properties]).find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

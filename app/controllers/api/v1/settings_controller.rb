@@ -30,7 +30,9 @@ class Api::V1::SettingsController < Api::V1::ApiController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_setting
-      @setting = Setting.find(params[:id])
+      Setting.transaction do
+        @setting = Setting.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

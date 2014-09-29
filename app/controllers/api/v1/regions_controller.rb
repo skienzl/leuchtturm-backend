@@ -30,7 +30,9 @@ class Api::V1::RegionsController < Api::V1::ApiController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
-      @region = Region.find(params[:id])
+      Region.transaction do
+        @region = Region.all.includes(:settings).find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

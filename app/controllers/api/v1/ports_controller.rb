@@ -30,7 +30,9 @@ class Api::V1::PortsController < Api::V1::ApiController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_port
-      @port = Port.find(params[:id])
+      Port.transaction do
+        @port = Port.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
