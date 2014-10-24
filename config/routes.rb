@@ -2,6 +2,9 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
+  resources :harbors
+  get 'harbors/:id/delete' => 'harbors#delete'
+
   root to: "home#index"
   resources :users
 

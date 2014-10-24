@@ -44,18 +44,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-          <% if user_signed_in? %>
-          <% if current_user.is_admin? %>
-          <ul class="nav nav-sidebar">
-            <%= active_li_link_to 'Users', users_path %>
-            <%= active_li_link_to 'Applications', oauth_applications_path %>
-          </ul>
-          <% end %>
-
-          <ul class="nav nav-sidebar">
-            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-          </ul>
-          <% end %>
+        <%= render 'layouts/menu' %>
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
