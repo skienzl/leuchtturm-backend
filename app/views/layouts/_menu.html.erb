@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+    <% if current_user.is_admin? %>
+        <ul class="nav nav-sidebar">
+          <%= active_li_link_to t('.users'), users_path %>
+          <%= active_li_link_to t('.applications'), oauth_applications_path %>
+          <%= active_li_link_to t('.harbors'), harbors_path %>
+        </ul>
+    <% end %>
+
+    <ul class="nav nav-sidebar">
+      <li><%= link_to(t('.logout'), destroy_user_session_path, :method => :delete) %></li>
+    </ul>
+<% end %>
