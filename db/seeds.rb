@@ -73,6 +73,12 @@ schmitten3_task = Task.create({
     harbor: zell
 })
 
+rb_task = Task.create({
+                                  name: "Picture on Twitter",
+                                  description: "User should take picture and uploads it to the server which tweets it on the Zell account.",
+                                  harbor: rb
+                              })
+
 # REGIONS
 
 beacon1 = Region.create({
@@ -88,7 +94,8 @@ beacon1 = Region.create({
                             minor: 1,
                             major: 1,
                             collection: room1,
-                            harbor: zell
+                            harbor: rb,
+                            task: rb_task
                         })
 
 beacon2 = Region.create({
@@ -104,7 +111,8 @@ beacon2 = Region.create({
                             minor: 2,
                             major: 1,
                             collection: room2,
-                            harbor: zell
+                            harbor: rb,
+                            task: rb_task
                         })
 
 beacon3 = Region.create({
@@ -120,7 +128,8 @@ beacon3 = Region.create({
                             minor: 3,
                             major: 1,
                             collection: room3,
-                            harbor: zell
+                            harbor: rb,
+                            task: rb_task
                         })
 
 schmitten1 = Region.create({
