@@ -16,6 +16,7 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :collection_id, null: false
       t.integer :task_id
       t.timestamps
+      t.integer :harbor_id, null: false
     end
 
     add_index :regions, :identifier
@@ -23,5 +24,6 @@ class CreateRegions < ActiveRecord::Migration
     add_index :regions, :lon
     add_index :regions, :task_id
     add_index :regions, :collection_id
+    add_index :regions, :harbor_id
   end
 end

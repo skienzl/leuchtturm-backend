@@ -1,8 +1,7 @@
 class Collection < ActiveRecord::Base
-  belongs_to :harbor
   has_many :regions
 
-  validates :harbor, presence: true
+
 
   validates :name, presence: true
   validates :name, length: { minimum: 5 }

@@ -19,6 +19,14 @@ class RegionTest < ActiveSupport::TestCase
     assert region.errors[:collection].any?
   end
 
+  test "harbor required" do
+    region = Region.new()
+    assert !region.valid?
+    assert region.errors[:harbor].any?
+  end
+
+
+
   test "task required" do
     region = Region.new()
     assert !region.valid?

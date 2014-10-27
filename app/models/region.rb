@@ -18,6 +18,9 @@ class Region < ActiveRecord::Base
   has_one :next, class_name: 'Region', foreign_key: 'prev_id'
   has_many :settings
   belongs_to :task
+  belongs_to :harbor
+
+  validates :harbor, presence: true
 
   validates :name, presence: true
 

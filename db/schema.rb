@@ -28,12 +28,9 @@ ActiveRecord::Schema.define(version: 20140905144031) do
   create_table "collections", force: true do |t|
     t.string   "name",                     null: false
     t.text     "description", default: "", null: false
-    t.integer  "harbor_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "collections", ["harbor_id"], name: "index_collections_on_harbor_id"
 
   create_table "harbors", force: true do |t|
     t.string   "name",                     null: false
@@ -134,9 +131,11 @@ ActiveRecord::Schema.define(version: 20140905144031) do
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "harbor_id",                  null: false
   end
 
   add_index "regions", ["collection_id"], name: "index_regions_on_collection_id"
+  add_index "regions", ["harbor_id"], name: "index_regions_on_harbor_id"
   add_index "regions", ["identifier"], name: "index_regions_on_identifier"
   add_index "regions", ["lat"], name: "index_regions_on_lat"
   add_index "regions", ["lon"], name: "index_regions_on_lon"

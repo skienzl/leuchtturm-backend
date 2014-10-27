@@ -35,25 +35,21 @@ rb = Harbor.create({
 
 schmitten = Collection.create({
     name: "Schmitten Runde",
-    harbor: zell,
     description: "Deep v pour-over disrupt, umami cornhole bicycle rights authentic bespoke ugh next level. Aesthetic iPhone McSweeney's, wolf Cosby sweater +1 banh mi. Disrupt drinking vinegar mixtape Williamsburg dreamcatcher, farm-to-table Tumblr. Lo-fi selfies ugh, polaroid wayfarers kitsch Schlitz retro mixtape flexitarian selvage PBR Austin trust fund. Flexitarian Blue Bottle shabby chic Helvetica sartorial. Sriracha Pinterest keffiyeh mlkshk 90's. PBR Tumblr organic, farm-to-table mixtape butcher Truffaut crucifix PBR&B kogi."
   })
 
 room1 = Collection.create({
     name: "Backbord",
-    harbor: rb,
     description: "Bacon ipsum dolor sit amet magna veniam esse, cillum consequat qui pariatur. Sausage rump sed ground round ut dolor fugiat drumstick duis pork voluptate. Sed cow nulla frankfurter venison, ground round ribeye excepteur strip steak magna occaecat labore veniam. Elit andouille tail adipisicing esse ullamco sausage tenderloin beef ribs in cupidatat laboris pastrami chuck pork loin."
   })
 
 room2 = Collection.create({
     name: "Steuerbord",
-    harbor: rb,
     description: "Bacon ipsum dolor sit amet magna veniam esse, cillum consequat qui pariatur. Sausage rump sed ground round ut dolor fugiat drumstick duis pork voluptate. Sed cow nulla frankfurter venison, ground round ribeye excepteur strip steak magna occaecat labore veniam. Elit andouille tail adipisicing esse ullamco sausage tenderloin beef ribs in cupidatat laboris pastrami chuck pork loin."
   })
 
 room3 = Collection.create({
     name: "Kombüse",
-    harbor: rb,
     description: "Bacon ipsum dolor sit amet magna veniam esse, cillum consequat qui pariatur. Sausage rump sed ground round ut dolor fugiat drumstick duis pork voluptate. Sed cow nulla frankfurter venison, ground round ribeye excepteur strip steak magna occaecat labore veniam. Elit andouille tail adipisicing esse ullamco sausage tenderloin beef ribs in cupidatat laboris pastrami chuck pork loin."
   })
 
@@ -91,7 +87,8 @@ beacon1 = Region.create({
                             identifier: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
                             minor: 1,
                             major: 1,
-                            collection: room1
+                            collection: room1,
+                            harbor: zell
                         })
 
 beacon2 = Region.create({
@@ -106,7 +103,8 @@ beacon2 = Region.create({
                             identifier: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
                             minor: 2,
                             major: 1,
-                            collection: room2
+                            collection: room2,
+                            harbor: zell
                         })
 
 beacon3 = Region.create({
@@ -121,7 +119,8 @@ beacon3 = Region.create({
                             identifier: "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
                             minor: 3,
                             major: 1,
-                            collection: room3
+                            collection: room3,
+                            harbor: zell
                         })
 
 schmitten1 = Region.create({
@@ -136,6 +135,7 @@ schmitten1 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
+                               harbor: zell,
                                collection: schmitten,
                                task: schmitten1_task
                            })
@@ -152,6 +152,7 @@ schmitten2 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
+                               harbor: zell,
                                collection: schmitten,
                                task: schmitten2_task
                            })
@@ -168,6 +169,7 @@ schmitten3 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
+                               harbor: zell,
                                collection: schmitten,
                                task: schmitten3_task
                            })
