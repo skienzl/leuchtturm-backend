@@ -13,12 +13,6 @@ class RegionTest < ActiveSupport::TestCase
     assert region.valid?
   end
 
-  test "collection required" do
-    region = Region.new()
-    assert !region.valid?
-    assert region.errors[:collection].any?
-  end
-
   test "harbor required" do
     region = Region.new()
     assert !region.valid?
@@ -86,19 +80,19 @@ class RegionTest < ActiveSupport::TestCase
 
   test "low accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::LOW
+    region.accuracy = Accuracy.LOW
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "medium accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::MEDIUM
+    region.accuracy = Accuracy.MEDIUM
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "high accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::HIGH
+    region.accuracy = Accuracy.HIGH
     assert region.valid?, region.errors.full_messages.inspect
   end
 

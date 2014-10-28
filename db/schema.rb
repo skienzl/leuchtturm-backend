@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20140905144031) do
     t.integer  "minor"
     t.integer  "major"
     t.text     "shape"
-    t.integer  "collection_id",              null: false
+    t.integer  "collection_id"
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
