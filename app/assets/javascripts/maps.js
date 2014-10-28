@@ -29,10 +29,10 @@ function showRegions(map){
     $.getJSON( document.URL + ".json", function( json ) {
         if(json.hasOwnProperty('harbor')){
             for(var i = 0; i < json.harbor.regions.length; i++){
-                addMarker(map, json.harbor.regions[i]);
+                addMarker(map, json.harbor.regions[i], false);
             }
         }else{
-            addMarker(map, json);
+            addMarker(map, json, true);
         }
         centerMarker(map);
     });
@@ -45,11 +45,11 @@ function clearMar(){
     markersArray.length = 0;
 }
 
-function addMarker(map, region){
+function addMarker(map, region, isDraggable){
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(region.lat,region.lon),
         map: map,
-        draggable:true,
+        draggable:isDraggable,
         title: region.name
     });
 
@@ -74,7 +74,18 @@ function centerMarker(map){
 }
 
 function markerDragend(marker){
-    //alert(marker.position.lat() + " / " +marker.position.lng());
+    var data_patch ='{"region":{"lat" : '+marker.position.lat()+', "lon" : '+marker.position.lng()+'}}';
+    $.ajax({
+        type: "PATCH",
+        url: document.URL + ".json",
+        data: data_patch,
+        contentType: "application/json; charset=utf-8",
+        accept: "application/json",
+        dataType: "json",
+        failure: function(errMsg) {
+            alert(errMsg);
+        }
+    });
 }
 
 $(document).on('page:change', initialize);

@@ -43,7 +43,7 @@ class RegionsController < ApplicationController
     respond_to do |format|
       if @region.update(region_params)
         format.html { redirect_to @region, notice: 'Region was successfully updated.' }
-        format.json { render :show, status: :ok, location: @region }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @region.errors, status: :unprocessable_entity }
@@ -66,7 +66,6 @@ class RegionsController < ApplicationController
     def set_region
       @harbor = Harbor.find(params[:harbor_id])
       @region = @harbor.regions.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
