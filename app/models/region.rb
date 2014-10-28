@@ -12,8 +12,6 @@ class Region < ActiveRecord::Base
 
   validates :name, presence: true
 
-  validates :collection, presence: true
-
   validates :task, presence: true
 
   validates :technology, numericality: {

@@ -1,6 +1,7 @@
 <ul class="nav nav-sidebar">
   <% @harbor.regions.each do |region| %>
-    <%= active_li_link_to region.name, harbor_region_path(@harbor, region) %>
+    <%= active_li_link_to region.name, edit_harbor_region_path(@harbor, region) %>
   <% end %>
+  <%= active_li_link_to t('create'), new_harbor_region_path(@harbor) %>
   <%= active_li_link_to t('back'), harbors_path %>
 </ul>

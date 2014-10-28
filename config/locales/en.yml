@@ -34,5 +34,16 @@ en:
 
   regions:
     form:
+      name: name
+      description: Description
+      next: Next Region
+      prev: Previous Region
+      lat: Latitude
+      lon: Longitude
       technology: Technology
       accuracy: Accuracy
+      identifier: Identifier
+      minor: Minor
+      major: Major
+      shape: shape
+      task: Task
