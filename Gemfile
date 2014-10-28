@@ -32,4 +32,5 @@ group :development do
   gem 'thin'
   gem 'better_errors'
   gem 'seed_dump'
+  gem 'binding_of_caller'
 end
