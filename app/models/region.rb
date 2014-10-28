@@ -1,11 +1,5 @@
 
 
-module Accuracy
-  HIGH = 2
-  MEDIUM = 1
-  LOW = 0
-end
-
 class Region < ActiveRecord::Base
   belongs_to :collection
   belongs_to :previous, class_name: 'Region', foreign_key: 'next_id'
