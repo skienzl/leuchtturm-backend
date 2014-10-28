@@ -13,12 +13,6 @@ class RegionTest < ActiveSupport::TestCase
     assert region.valid?
   end
 
-  test "collection required" do
-    region = Region.new()
-    assert !region.valid?
-    assert region.errors[:collection].any?
-  end
-
   test "harbor required" do
     region = Region.new()
     assert !region.valid?
@@ -52,25 +46,25 @@ class RegionTest < ActiveSupport::TestCase
 
   test "gps technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::GPS
+    region.technology = Technology.GPS
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "beacon technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::BEACON
+    region.technology = Technology.BEACON
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "nfc technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::NFC
+    region.technology = Technology.NFC
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "qr technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::QR
+    region.technology = Technology.QR
     assert region.valid?, region.errors.full_messages.inspect
   end
 
@@ -86,19 +80,19 @@ class RegionTest < ActiveSupport::TestCase
 
   test "low accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::LOW
+    region.accuracy = Accuracy.LOW
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "medium accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::MEDIUM
+    region.accuracy = Accuracy.MEDIUM
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "high accuracy valid" do
     region = regions(:beacon1)
-    region.accuracy = Accuracy::HIGH
+    region.accuracy = Accuracy.HIGH
     assert region.valid?, region.errors.full_messages.inspect
   end
 
@@ -220,7 +214,7 @@ class RegionTest < ActiveSupport::TestCase
 
   test "NFC needs identifier" do
     region = regions(:beacon1)
-    region.technology = Technology::NFC
+    region.technology = Technology.NFC
     region.identifier = nil
     assert !region.valid?
     assert region.errors[:identifier].any?
@@ -228,7 +222,7 @@ class RegionTest < ActiveSupport::TestCase
 
   test "QR needs identifier" do
     region = regions(:beacon1)
-    region.technology = Technology::QR
+    region.technology = Technology.QR
     region.identifier = nil
     assert !region.valid?
     assert region.errors[:identifier].any?

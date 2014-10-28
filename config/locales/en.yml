@@ -4,6 +4,16 @@ en:
   save: Save
   edit: Edit
   back: Back
+  create: Create
+
+  GPS: GPS
+  BEACON: BEACON
+  NFC: NFC
+  QR: QR
+
+  LOW: LOW
+  MEDIUM: MEDIUM
+  HIGH: HIGH
 
   layouts:
     menu:
@@ -21,3 +31,19 @@ en:
         body: This action CANNOT be undone. This will permanently delete the %{name} harbor.
         reason: Please type in the name of the harbor to confirm.
         delete: I understand the consequences, delete this harbor.
+
+  regions:
+    form:
+      name: name
+      description: Description
+      next: Next Region
+      prev: Previous Region
+      lat: Latitude
+      lon: Longitude
+      technology: Technology
+      accuracy: Accuracy
+      identifier: Identifier
+      minor: Minor
+      major: Major
+      shape: shape
+      task: Task

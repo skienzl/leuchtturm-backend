@@ -1,4 +1,5 @@
 class RegionsController < ApplicationController
+  before_action :set_harbor
   before_action :set_region, only: [:show, :edit, :update, :destroy]
 
   # GET /regions
@@ -25,11 +26,11 @@ class RegionsController < ApplicationController
   # POST /regions.json
   def create
     @region = Region.new(region_params)
-
+    @region.harbor = @harbor
     respond_to do |format|
       if @region.save
-        format.html { redirect_to @region, notice: 'Region was successfully created.' }
-        format.json { render :show, status: :created, location: @region }
+        format.html { redirect_to harbor_path(@harbor), notice: 'Region was successfully created.' }
+        format.json { render :show, status: :created }
       else
         format.html { render :new }
         format.json { render json: @region.errors, status: :unprocessable_entity }
@@ -56,7 +57,7 @@ class RegionsController < ApplicationController
   def destroy
     @region.destroy
     respond_to do |format|
-      format.html { redirect_to regions_url, notice: 'Region was successfully destroyed.' }
+      format.html { redirect_to harbor_regions_url, notice: 'Region was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,8 +65,11 @@ class RegionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
-      @harbor = Harbor.find(params[:harbor_id])
       @region = @harbor.regions.find(params[:id])
+    end
+
+    def set_harbor
+      @harbor = Harbor.find(params[:harbor_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

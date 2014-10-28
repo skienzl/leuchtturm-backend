@@ -13,7 +13,7 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :minor
       t.integer :major
       t.text :shape
-      t.integer :collection_id, null: false
+      t.integer :collection_id
       t.integer :task_id
       t.timestamps
       t.integer :harbor_id, null: false

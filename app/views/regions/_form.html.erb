@@ -1,6 +1,8 @@
-<%= form_for(@region) do |f| %>
+<div class="row">
+  <div class="col-sm-6 col-md-5 col-lg-6">
+<%= form_for [@harbor, @region], as: :region do |f| %>
   <% if @region.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation"  class="alert alert-danger">
       <h2><%= pluralize(@region.errors.count, "error") %> prohibited this region from being saved:</h2>
 
       <ul>
@@ -11,67 +13,69 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label t('.name') %><br>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label t('.description') %><br>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :next_id %><br>
-    <%= f.number_field :next_id %>
+  <div class="form-group">
+    <%= f.label t('.next') %><br>
+    <%= f.number_field :next_id, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :prev_id %><br>
-    <%= f.number_field :prev_id %>
+  <div class="form-group">
+    <%= f.label t('.prev') %><br>
+    <%= f.number_field :prev_id, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :lat %><br>
-    <%= f.text_field :lat %>
+  <div class="form-group">
+    <%= f.label t('.lat') %><br>
+    <%= f.text_field :lat,  class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :lon %><br>
-    <%= f.text_field :lon %>
+  <div class="form-group">
+    <%= f.label t('.lon') %><br>
+    <%= f.text_field :lon, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :technology %><br>
-    <%= f.number_field :technology %>
+
+    <div class="form-group">
+      <%= f.label t('.technology'), class:"control-label" %><br>
+     <%= f.collection_select :technology, Technology.technologies, :id, :name, include_blank: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label t('.accuracy'), class:"control-label" %><br>
+      <%= f.collection_select :accuracy, Accuracy.accuracies, :id, :name, include_blank: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label t('.task'), class:"control-label" %><br>
+      <%= f.collection_select :task_id, Task.all.order(:name), :id, :name, include_blank: true, class: 'form-control' %>
+    </div>
+
+
+  <div class="form-group">
+    <%= f.label t('.identifier') %><br>
+    <%= f.text_field :identifier, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :accuracy %><br>
-    <%= f.number_field :accuracy %>
+  <div class="form-group">
+    <%= f.label t('.minor') %><br>
+    <%= f.number_field :minor, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :identifier %><br>
-    <%= f.text_field :identifier %>
+  <div class="form-group">
+    <%= f.label t('.major') %><br>
+    <%= f.number_field :major, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :minor %><br>
-    <%= f.number_field :minor %>
+  <div class="form-group">
+    <%= f.label t('.shape') %><br>
+    <%= f.text_area :shape, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :major %><br>
-    <%= f.number_field :major %>
-  </div>
-  <div class="field">
-    <%= f.label :shape %><br>
-    <%= f.text_area :shape %>
-  </div>
-  <div class="field">
-    <%= f.label :collection_id %><br>
-    <%= f.number_field :collection_id %>
-  </div>
-  <div class="field">
-    <%= f.label :task_id %><br>
-    <%= f.number_field :task_id %>
-  </div>
-  <div class="field">
-    <%= f.label :harbor_id %><br>
-    <%= f.number_field :harbor_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+    <div class="actions">
+      <%= f.submit t('save'), class: "btn btn-success" %>
+    </div>
 <% end %>
+</div>
+<div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'regions/maps' %></div>
+</div>
