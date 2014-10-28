@@ -52,25 +52,25 @@ class RegionTest < ActiveSupport::TestCase
 
   test "gps technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::GPS
+    region.technology = Technology.GPS
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "beacon technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::BEACON
+    region.technology = Technology.BEACON
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "nfc technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::NFC
+    region.technology = Technology.NFC
     assert region.valid?, region.errors.full_messages.inspect
   end
 
   test "qr technology valid" do
     region = regions(:beacon1)
-    region.technology = Technology::QR
+    region.technology = Technology.QR
     assert region.valid?, region.errors.full_messages.inspect
   end
 
@@ -220,7 +220,7 @@ class RegionTest < ActiveSupport::TestCase
 
   test "NFC needs identifier" do
     region = regions(:beacon1)
-    region.technology = Technology::NFC
+    region.technology = Technology.NFC
     region.identifier = nil
     assert !region.valid?
     assert region.errors[:identifier].any?
@@ -228,7 +228,7 @@ class RegionTest < ActiveSupport::TestCase
 
   test "QR needs identifier" do
     region = regions(:beacon1)
-    region.technology = Technology::QR
+    region.technology = Technology.QR
     region.identifier = nil
     assert !region.valid?
     assert region.errors[:identifier].any?

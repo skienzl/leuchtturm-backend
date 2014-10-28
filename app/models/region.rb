@@ -1,10 +1,4 @@
 
-module Technology
-  GPS = 0
-  BEACON = 1
-  NFC = 2
-  QR = 3
-end
 
 module Accuracy
   HIGH = 2
@@ -67,6 +61,7 @@ class Region < ActiveRecord::Base
 
   validate :list_consistency_check
 
+
   private
 
     # VALIDATION HELPER
@@ -75,14 +70,16 @@ class Region < ActiveRecord::Base
     end
 
     def is_beacon?
-      return technology == Technology::BEACON
+      return technology == Technology.BEACON
     end
 
     def needs_identifier?
-      return technology != Technology::GPS
+      return technology != Technology.GPS
     end
 
   def needs_accuracy?
-    return [Technology::GPS, Technology::BEACON].include? technology
+    return [Technology.GPS, Technology.BEACON].include? technology
   end
+
+
 end
