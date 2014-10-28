@@ -2,7 +2,11 @@ require 'api_constraints'
 
 Rails.application.routes.draw do
 
-  resources :harbors
+
+
+  resources :harbors do
+    resources :regions
+  end
   get 'harbors/:id/delete' => 'harbors#delete'
 
   root to: "home#index"

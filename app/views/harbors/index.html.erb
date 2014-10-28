@@ -14,7 +14,7 @@
   <tbody>
     <% @harbors.each do |harbor| %>
       <tr>
-        <td><%= harbor.name %></td>
+        <td><%= link_to harbor.name, harbor_path(harbor) %></td>
         <td><%= harbor.description %></td>
         <td><%= link_to t('edit'), edit_harbor_path(harbor), class: "btn btn-warning btn-xs" %></td>
         <td><%= link_to t('delete'), harbor_path(harbor) + "/delete", class: "btn btn-danger btn-xs" %></td>

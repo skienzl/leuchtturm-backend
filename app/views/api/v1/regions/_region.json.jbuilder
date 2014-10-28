@@ -1,2 +1,2 @@
-json.extract! region, :id, :name, :description, :task_id, :collection_id, :next_id, :prev_id, :technology, :accuracy, :identifier, :minor, :major, :shape, :lat, :lon
+json.extract! region, :id, :name, :description, :harbor_id, :task_id, :collection_id, :next_id, :prev_id, :technology, :accuracy, :identifier, :minor, :major, :shape, :lat, :lon
 json.settings region.settings, partial: 'api/v1/settings/setting', as: :setting

@@ -3,6 +3,7 @@ en:
   delete: Delete
   save: Save
   edit: Edit
+  back: Back
 
   layouts:
     menu:

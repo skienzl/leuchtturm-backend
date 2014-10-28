@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-5 col-lg-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @region.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @region.description %>
+    </p>
+
+    <p>
+      <strong>Next:</strong>
+      <%= @region.next_id %>
+    </p>
+
+    <p>
+      <strong>Prev:</strong>
+      <%= @region.prev_id %>
+    </p>
+
+    <p>
+      <strong>Lat:</strong>
+      <%= @region.lat %>
+    </p>
+
+    <p>
+      <strong>Lon:</strong>
+      <%= @region.lon %>
+    </p>
+
+    <p>
+      <strong>Technology:</strong>
+      <%= @region.technology %>
+    </p>
+
+    <p>
+      <strong>Accuracy:</strong>
+      <%= @region.accuracy %>
+    </p>
+
+    <p>
+      <strong>Identifier:</strong>
+      <%= @region.identifier %>
+    </p>
+
+    <p>
+      <strong>Minor:</strong>
+      <%= @region.minor %>
+    </p>
+
+    <p>
+      <strong>Major:</strong>
+      <%= @region.major %>
+    </p>
+
+    <p>
+      <strong>Shape:</strong>
+      <%= @region.shape %>
+    </p>
+
+    <p>
+      <strong>Collection:</strong>
+      <%= @region.collection_id %>
+    </p>
+
+    <p>
+      <strong>Task:</strong>
+      <%= @region.task_id %>
+    </p>
+
+    <p>
+      <strong>Harbor:</strong>
+      <%= @region.harbor_id %>
+    </p>
+  </div>
+  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'regions/maps' %></div>
+</div>
+
+
+
+<%= link_to 'Edit', edit_harbor_region_path(@harbor, @region) %> |
+<%= link_to 'Back', harbor_path(@harbor) %>

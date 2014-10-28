@@ -8,6 +8,7 @@
   <meta name="author" content="">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?sensor=false', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <title>Leuchtturm</title>
@@ -15,6 +16,7 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+
 
 </head>
 <body>
@@ -44,7 +46,11 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-        <%= render 'layouts/menu' %>
+          <% if @harbor.nil? %>
+              <%= render 'layouts/menu' %>
+          <% else %>
+              <%= render 'harbors/menu' %>
+          <% end %>
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
