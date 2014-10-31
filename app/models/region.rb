@@ -1,12 +1,15 @@
 
 
 class Region < ActiveRecord::Base
+
   belongs_to :collection
   belongs_to :previous, class_name: 'Region', foreign_key: 'next_id'
   has_one :next, class_name: 'Region', foreign_key: 'prev_id'
   has_many :settings
   belongs_to :task
   belongs_to :harbor
+
+
 
   validates :harbor, presence: true
 
@@ -53,6 +56,34 @@ class Region < ActiveRecord::Base
 
   validate :list_consistency_check
 
+
+
+
+  before_update do
+    if self.technology == Technology.GPS
+      self.identifier = ''
+      self.major = 0
+      self.minor = 0
+    end
+
+    if self.technology == Technology.BEACON
+      self.shape = ''
+    end
+
+    if self.technology == Technology.QR
+      self.minor = 0
+      self.major = 0
+      self.shape = ''
+      self.accuracy = Accuracy.HIGH
+    end
+
+    if self.technology == Technology.NFC
+      self.minor = 0
+      self.major = 0
+      self.shape = ''
+      self.accuracy = Accuracy.HIGH
+    end
+  end
 
   private
 
