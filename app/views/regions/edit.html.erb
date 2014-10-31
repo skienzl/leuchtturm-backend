@@ -1,4 +1,9 @@
-<h1>Editing region</h1>
 
-<%= render 'form' %>
+    <h1>Editing region</h1>
+
+
+
+    <%= link_to t('delete'), harbor_region_path(@harbor, @region), method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-danger"  %>
+
+    <%= render 'form' %>
 
