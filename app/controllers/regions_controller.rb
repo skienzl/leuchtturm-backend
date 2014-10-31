@@ -43,7 +43,7 @@ class RegionsController < ApplicationController
   def update
     respond_to do |format|
       if @region.update(region_params)
-        format.html { redirect_to @region, notice: 'Region was successfully updated.' }
+        format.html { redirect_to harbor_region_path(@harbor, @region), notice: 'Region was successfully updated.' }
         format.json { render :show, status: :ok }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class RegionsController < ApplicationController
   def destroy
     @region.destroy
     respond_to do |format|
-      format.html { redirect_to harbor_regions_url, notice: 'Region was successfully destroyed.' }
+      format.html { redirect_to harbor_path(@harbor), notice: 'Region was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

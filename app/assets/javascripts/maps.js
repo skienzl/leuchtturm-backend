@@ -38,7 +38,6 @@ function showRegions(map){
     if(endsWith("/edit")) {
         url = url.substring(0, url.length-5);
     }
-    console.log(url);
     $.getJSON(url + ".json", function( json ) {
         if(json.hasOwnProperty('harbor')){
             for(var i = 0; i < json.harbor.regions.length; i++){
@@ -87,18 +86,28 @@ function centerMarker(map){
 }
 
 function updateMarker(marker){
-    var data_patch ='{"region":{"lat" : '+marker.position.lat()+', "lon" : '+marker.position.lng()+'}}';
+   /* var data_patch ='{"region":{"lat" : '+marker.position.lat()+', "lon" : '+marker.position.lng()+'}}';
+    var url = document.URL;
+    if(endsWith("/edit")) {
+        url = url.substring(0, url.length-5);
+    }
     $.ajax({
         type: "PATCH",
-        url: document.URL + ".json",
+        url: url + ".json",
         data: data_patch,
         contentType: "application/json; charset=utf-8",
         accept: "application/json",
         dataType: "json",
+        success: function() {
+            $('#region_lat').val(marker.position.lat());
+            $('#region_lon').val(marker.position.lng());
+        },
         failure: function(errMsg) {
             alert(errMsg);
         }
-    });
+    });*/
+    $('#region_lat').val(marker.position.lat());
+    $('#region_lon').val(marker.position.lng());
 }
 
 function onMapClick(map, position) {
