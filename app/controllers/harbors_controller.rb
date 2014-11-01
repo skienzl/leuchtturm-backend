@@ -28,7 +28,7 @@ class HarborsController < ApplicationController
 
     respond_to do |format|
       if @harbor.save
-        format.html { redirect_to harbors_path, notice: 'Harbor was successfully created.' }
+        format.html { redirect_to harbor_path @harbor, notice: 'Harbor was successfully created.' }
         format.json { render :show, status: :created, location: @harbor }
       else
         format.html { render :new }
