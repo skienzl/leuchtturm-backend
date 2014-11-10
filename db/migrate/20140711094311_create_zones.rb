@@ -1,6 +1,6 @@
-class CreateRegions < ActiveRecord::Migration
+class CreateZones < ActiveRecord::Migration
   def change
-    create_table :regions do |t|
+    create_table :zones do |t|
       t.string :name, null: false
       t.text :description, null: false, default: ""
       t.integer :next_id
@@ -19,11 +19,11 @@ class CreateRegions < ActiveRecord::Migration
       t.integer :harbor_id, null: false
     end
 
-    add_index :regions, :identifier
-    add_index :regions, :lat
-    add_index :regions, :lon
-    add_index :regions, :task_id
-    add_index :regions, :collection_id
-    add_index :regions, :harbor_id
+    add_index :zones, :identifier
+    add_index :zones, :lat
+    add_index :zones, :lon
+    add_index :zones, :task_id
+    add_index :zones, :collection_id
+    add_index :zones, :harbor_id
   end
 end

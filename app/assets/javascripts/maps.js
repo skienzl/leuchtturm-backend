@@ -28,20 +28,20 @@ function loadMarker(map) {
             onMapClick(map, event.latLng);
         });
     }else{
-        showRegions(map);
+        showZones(map);
     }
 
 }
 
-function showRegions(map){
+function showZones(map){
     var url = document.URL;
     if(endsWith("/edit")) {
         url = url.substring(0, url.length-5);
     }
     $.getJSON(url + ".json", function( json ) {
         if(json.hasOwnProperty('harbor')){
-            for(var i = 0; i < json.harbor.regions.length; i++){
-                addMarker(map, json.harbor.regions[i], false);
+            for(var i = 0; i < json.harbor.zones.length; i++){
+                addMarker(map, json.harbor.zones[i], false);
             }
         }else{
             addMarker(map, json, true);
@@ -57,12 +57,12 @@ function clearMar(){
     markersArray.length = 0;
 }
 
-function addMarker(map, region, isDraggable){
+function addMarker(map, zone, isDraggable){
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(region.lat,region.lon),
+        position: new google.maps.LatLng(zone.lat,zone.lon),
         map: map,
         draggable:isDraggable,
-        title: region.name
+        title: zone.name
     });
 
 
@@ -86,7 +86,7 @@ function centerMarker(map){
 }
 
 function updateMarker(marker){
-   /* var data_patch ='{"region":{"lat" : '+marker.position.lat()+', "lon" : '+marker.position.lng()+'}}';
+   /* var data_patch ='{"zone":{"lat" : '+marker.position.lat()+', "lon" : '+marker.position.lng()+'}}';
     var url = document.URL;
     if(endsWith("/edit")) {
         url = url.substring(0, url.length-5);
@@ -99,15 +99,15 @@ function updateMarker(marker){
         accept: "application/json",
         dataType: "json",
         success: function() {
-            $('#region_lat').val(marker.position.lat());
-            $('#region_lon').val(marker.position.lng());
+            $('#zone_lat').val(marker.position.lat());
+            $('#zone_lon').val(marker.position.lng());
         },
         failure: function(errMsg) {
             alert(errMsg);
         }
     });*/
-    $('#region_lat').val(marker.position.lat());
-    $('#region_lon').val(marker.position.lng());
+    $('#zone_lat').val(marker.position.lat());
+    $('#zone_lon').val(marker.position.lng());
 }
 
 function onMapClick(map, position) {
@@ -115,7 +115,7 @@ function onMapClick(map, position) {
         position: position,
         map: map,
         draggable: true,
-        title: "new region"
+        title: "new zone"
     });
     setLatLng(position);
     google.maps.event.addListener(marker, 'dragend', function() { setLatLng(marker.getPosition()); } );
@@ -124,8 +124,8 @@ function onMapClick(map, position) {
 
 
 function setLatLng(position){
-     $('#region_lat').val(position.lat());
-     $('#region_lon').val(position.lng());
+     $('#zone_lat').val(position.lat());
+     $('#zone_lon').val(position.lng());
 }
 
 function endsWith(ending){

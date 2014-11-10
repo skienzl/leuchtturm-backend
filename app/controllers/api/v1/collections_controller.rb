@@ -31,7 +31,7 @@ class Api::V1::CollectionsController < Api::V1::ApiController
     # Use callbacks to share common setup or constraints between actions.
     def set_collection
       Collection.transaction do
-        @collection = Collection.all.includes(regions: [:settings]).find(params[:id])
+        @collection = Collection.all.includes(zones: [:settings]).find(params[:id])
       end
     end
 

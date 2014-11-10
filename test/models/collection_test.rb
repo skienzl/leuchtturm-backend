@@ -20,9 +20,9 @@ class CollectionTest < ActiveSupport::TestCase
     assert collection.errors[:name].any?
   end
 
-  test "should have regions" do
+  test "should have zones" do
     schmitten = collections(:schmitten)
-    assert schmitten.regions.length == 3
+    assert schmitten.zones.length == 3
   end
 
   test "should fail with broken list" do

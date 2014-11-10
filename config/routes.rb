@@ -1,11 +1,8 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
-
-
-
   resources :harbors do
-    resources :regions
+    resources :zones
   end
   get 'harbors/:id/delete' => 'harbors#delete'
 
@@ -20,7 +17,7 @@ Rails.application.routes.draw do
 
       resources :harbors 
       resources :collections, :except => :index
-      resources :regions,     :except => :index
+      resources :zones,     :except => :index
       resources :tasks,       :except => :index
       resources :activities,  :except => :index
       resources :properties,  :except => :index

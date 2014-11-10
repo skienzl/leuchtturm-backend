@@ -31,7 +31,7 @@ class Api::V1::HarborsController < Api::V1::ApiController
     # Use callbacks to share common setup or constraints between actions.
     def set_harbor
       Harbor.transaction do
-        @harbor = Harbor.all.includes(regions: [:settings], tasks: [mappings: [:properties], activities: [:ports, :properties]]).find(params[:id])
+        @harbor = Harbor.all.includes(zones: [:settings], tasks: [mappings: [:properties], activities: [:ports, :properties]]).find(params[:id])
       end
     end
 

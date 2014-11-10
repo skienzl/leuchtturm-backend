@@ -1,10 +1,10 @@
 
 
-class Region < ActiveRecord::Base
+class Zone < ActiveRecord::Base
 
   belongs_to :collection
-  belongs_to :previous, class_name: 'Region', foreign_key: 'next_id'
-  has_one :next, class_name: 'Region', foreign_key: 'prev_id'
+  belongs_to :previous, class_name: 'Zone', foreign_key: 'next_id'
+  has_one :next, class_name: 'Zone', foreign_key: 'prev_id'
   has_many :settings
   belongs_to :task
   belongs_to :harbor

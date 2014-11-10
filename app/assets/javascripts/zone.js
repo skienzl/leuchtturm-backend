@@ -3,8 +3,8 @@
  */
 
 function setOnTechnologyListener() {
-    if (document.getElementById("region_technology")) {
-        $('#region_technology').change(function () {
+    if (document.getElementById("zone_technology")) {
+        $('#zone_technology').change(function () {
             updateTechnologyOption();
         });
         updateTechnologyOption();
@@ -12,7 +12,7 @@ function setOnTechnologyListener() {
 }
 
 function updateTechnologyOption() {
-    var technology_id = $('#region_technology').val();
+    var technology_id = $('#zone_technology').val();
 
     switch (technology_id) {
         case "0":
@@ -37,11 +37,11 @@ function updateTechnologyOption() {
 }
 
 function setFieldsVisible(accuracy_visibel, identifier_visible, minor_visible, major_visible, shape_visible) {
-    setVisibel($('#region_accuracy'), accuracy_visibel);
-    setVisibel($('#region_identifier'), identifier_visible);
-    setVisibel($('#region_minor'), minor_visible);
-    setVisibel($('#region_major'), major_visible);
-    setVisibel($('#region_shape'), shape_visible);
+    setVisibel($('#zone_accuracy'), accuracy_visibel);
+    setVisibel($('#zone_identifier'), identifier_visible);
+    setVisibel($('#zone_minor'), minor_visible);
+    setVisibel($('#zone_major'), major_visible);
+    setVisibel($('#zone_shape'), shape_visible);
 }
 
 function setVisibel(field, isVisible) {

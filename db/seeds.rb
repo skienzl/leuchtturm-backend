@@ -1,4 +1,3 @@
-
 # USERS
 
 user1 = User.create({email: "mgratzer@gmail.com",
@@ -79,9 +78,9 @@ rb_task = Task.create({
                                   harbor: rb
                               })
 
-# REGIONS
+# ZONES
 
-beacon1 = Region.create({
+beacon1 = Zone.create({
                             name: "Beacon 1",
                             description: "Backbord Beacon",
                             next: nil,
@@ -98,7 +97,7 @@ beacon1 = Region.create({
                             task: rb_task
                         })
 
-beacon2 = Region.create({
+beacon2 = Zone.create({
                             name: "Beacon 2",
                             description: "Backbord Beacon",
                             next: nil,
@@ -115,7 +114,7 @@ beacon2 = Region.create({
                             task: rb_task
                         })
 
-beacon3 = Region.create({
+beacon3 = Zone.create({
                             name: "Beacon 3",
                             description: "Backbord Beacon",
                             next: nil,
@@ -132,7 +131,7 @@ beacon3 = Region.create({
                             task: rb_task
                         })
 
-schmitten1 = Region.create({
+schmitten1 = Zone.create({
                                name: "Schmitten Point of Interest 1",
                                description: "Schmitten POI",
                                next: nil,
@@ -149,7 +148,7 @@ schmitten1 = Region.create({
                                task: schmitten1_task
                            })
 
-schmitten2 = Region.create({
+schmitten2 = Zone.create({
                                name: "Schmitten Point of Interest 2",
                                description: "Schmitten POI",
                                next: nil,
@@ -166,7 +165,7 @@ schmitten2 = Region.create({
                                task: schmitten2_task
                            })
 
-schmitten3 = Region.create({
+schmitten3 = Zone.create({
                                name: "Schmitten Point of Interest 3",
                                description: "Schmitten POI",
                                next: nil,

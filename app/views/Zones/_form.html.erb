@@ -3,13 +3,13 @@
 
 
   <div class="col-sm-6 col-md-5 col-lg-6">
-    <%= form_for [@harbor, @region], as: :region do |f| %>
-        <% if @region.errors.any? %>
+    <%= form_for [@harbor, @zone], as: :zone do |f| %>
+        <% if @zone.errors.any? %>
             <div id="error_explanation"  class="alert alert-danger">
-              <h2><%= pluralize(@region.errors.count, "error") %> prohibited this region from being saved:</h2>
+              <h2><%= pluralize(@zone.errors.count, "error") %> prohibited this zone from being saved:</h2>
 
               <ul>
-                <% @region.errors.full_messages.each do |message| %>
+                <% @zone.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                 <% end %>
               </ul>
@@ -81,5 +81,5 @@
         </div>
     <% end %>
     </div>
-    <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'regions/maps' %></div>
+    <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
     </div>

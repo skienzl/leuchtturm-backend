@@ -6,83 +6,83 @@
   <div class="col-sm-6 col-md-5 col-lg-6">
     <p>
       <strong>Name:</strong>
-      <%= @region.name %>
+      <%= @zone.name %>
     </p>
 
     <p>
       <strong>Description:</strong>
-      <%= @region.description %>
+      <%= @zone.description %>
     </p>
 
     <p>
       <strong>Next:</strong>
-      <%= @region.next_id %>
+      <%= @zone.next_id %>
     </p>
 
     <p>
       <strong>Prev:</strong>
-      <%= @region.prev_id %>
+      <%= @zone.prev_id %>
     </p>
 
     <p>
       <strong>Lat:</strong>
-      <%= @region.lat %>
+      <%= @zone.lat %>
     </p>
 
     <p>
       <strong>Lon:</strong>
-      <%= @region.lon %>
+      <%= @zone.lon %>
     </p>
 
     <p>
       <strong>Technology:</strong>
-      <%= @region.technology %>
+      <%= @zone.technology %>
     </p>
 
     <p>
       <strong>Accuracy:</strong>
-      <%= @region.accuracy %>
+      <%= @zone.accuracy %>
     </p>
 
     <p>
       <strong>Identifier:</strong>
-      <%= @region.identifier %>
+      <%= @zone.identifier %>
     </p>
 
     <p>
       <strong>Minor:</strong>
-      <%= @region.minor %>
+      <%= @zone.minor %>
     </p>
 
     <p>
       <strong>Major:</strong>
-      <%= @region.major %>
+      <%= @zone.major %>
     </p>
 
     <p>
       <strong>Shape:</strong>
-      <%= @region.shape %>
+      <%= @zone.shape %>
     </p>
 
     <p>
       <strong>Collection:</strong>
-      <%= @region.collection_id %>
+      <%= @zone.collection_id %>
     </p>
 
     <p>
       <strong>Task:</strong>
-      <%= @region.task_id %>
+      <%= @zone.task_id %>
     </p>
 
     <p>
       <strong>Harbor:</strong>
-      <%= @region.harbor_id %>
+      <%= @zone.harbor_id %>
     </p>
   </div>
-  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'regions/maps' %></div>
+  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
 </div>
 
 
 
-<%= link_to 'Edit', edit_harbor_region_path(@harbor, @region) %> |
+<%= link_to 'Edit', edit_harbor_zone_path(@harbor, @zone) %> |
 <%= link_to 'Back', harbor_path(@harbor) %>

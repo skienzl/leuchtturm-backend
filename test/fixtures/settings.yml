@@ -1,31 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-region_task1:
-  region: beacon1
+zone_task1:
+  zone: beacon1
   key: key1
   value: value1
 
-region_task2:
-  region: beacon2
+zone_task2:
+  zone: beacon2
   key: key1
   value: value1
 
-region_task3:
-  region: beacon3
+zone_task3:
+  zone: beacon3
   key: key1
   value: value1
 
-region_task4:
-  region: schmitten1
+zone_task4:
+  zone: schmitten1
   key: key1
   value: value1
 
-region_task5:
-  region: schmitten2
+zone_task5:
+  zone: schmitten2
   key: key1
   value: value1
 
-region_task6:
-  region: schmitten3
+zone_task6:
+  zone: schmitten3
   key: key1
   value: value1

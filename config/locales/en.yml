@@ -32,12 +32,12 @@ en:
         reason: Please type in the name of the harbor to confirm.
         delete: I understand the consequences, delete this harbor.
 
-  regions:
+  zones:
     form:
       name: name
       description: Description
-      next: Next Region
-      prev: Previous Region
+      next: Next Zone
+      prev: Previous Zone
       lat: Latitude
       lon: Longitude
       technology: Technology

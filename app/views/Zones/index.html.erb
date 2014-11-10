@@ -1,0 +1,53 @@
+<h1>Listing zones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Next</th>
+      <th>Prev</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Technology</th>
+      <th>Accuracy</th>
+      <th>Identifier</th>
+      <th>Minor</th>
+      <th>Major</th>
+      <th>Shape</th>
+      <th>Collection</th>
+      <th>Task</th>
+      <th>Harbor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zones.each do |zone| %>
+      <tr>
+        <td><%= zone.name %></td>
+        <td><%= zone.description %></td>
+        <td><%= zone.next_id %></td>
+        <td><%= zone.prev_id %></td>
+        <td><%= zone.lat %></td>
+        <td><%= zone.lon %></td>
+        <td><%= zone.technology %></td>
+        <td><%= zone.accuracy %></td>
+        <td><%= zone.identifier %></td>
+        <td><%= zone.minor %></td>
+        <td><%= zone.major %></td>
+        <td><%= zone.shape %></td>
+        <td><%= zone.collection_id %></td>
+        <td><%= zone.task_id %></td>
+        <td><%= zone.harbor_id %></td>
+        <td><%= link_to 'Show', zone %></td>
+        <td><%= link_to 'Edit', edit_zone_path(zone) %></td>
+        <td><%= link_to 'Destroy', zone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zone', new_zone_path %>

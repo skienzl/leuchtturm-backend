@@ -37,6 +37,6 @@ class Api::V1::SettingsController < Api::V1::ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def setting_params
-      params.require(:setting).permit(:key, :value, :region_id)
+      params.require(:setting).permit(:key, :value, :zone_id)
     end
 end

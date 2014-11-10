@@ -1,7 +1,7 @@
 class Setting < ActiveRecord::Base
-  belongs_to :region
+  belongs_to :zone
 
-  validates :region, presence: true
+  validates :zone, presence: true
   validates :key, presence: true
   validates :value, presence: true
 

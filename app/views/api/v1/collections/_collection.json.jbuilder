@@ -1,2 +1,2 @@
 json.extract! coll, :id, :name, :description
-json.regions coll.regions, partial: 'api/v1/regions/region', as: :region
+json.zones coll.zones, partial: 'api/v1/zones/zone', as: :zone

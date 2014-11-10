@@ -1,5 +1,5 @@
 class Harbor < ActiveRecord::Base
-  has_many :regions
+  has_many :zones
   has_many :tasks
 
   validates :name, presence: true
