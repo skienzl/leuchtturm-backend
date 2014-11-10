@@ -37,6 +37,6 @@ class Api::V1::TasksController < Api::V1::ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :region_id)
+      params.require(:task).permit(:name, :description, :zone_id)
     end
 end

@@ -2,8 +2,8 @@ require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
   test "correct name" do
-    zell = harbors(:zell)
-    task = Task.new(harbor: zell, name: "Task 1")
+    zell = scopes(:zell)
+    task = Task.new(scope: zell, name: "Task 1")
     assert task.valid?
   end
 
@@ -13,10 +13,10 @@ class TaskTest < ActiveSupport::TestCase
     assert task.errors[:name].any?
   end
 
-  test "harbor required" do
+  test "scope required" do
     task = Task.new()
     assert !task.valid?
-    assert task.errors[:harbor].any?
+    assert task.errors[:scope].any?
   end
 
   test "name length needs to be greater than 5" do

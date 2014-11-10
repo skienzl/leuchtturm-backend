@@ -1,1 +1,1 @@
-json.extract! setting, :id, :key, :value, :region_id
+json.extract! setting, :id, :key, :value, :zone_id

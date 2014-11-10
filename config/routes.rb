@@ -1,13 +1,10 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
-
-
-
-  resources :harbors do
-    resources :regions
+  resources :scopes do
+    resources :zones
   end
-  get 'harbors/:id/delete' => 'harbors#delete'
+  get 'scopes/:id/delete' => 'scopes#delete'
 
   root to: "home#index"
   resources :users
@@ -18,9 +15,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
 
-      resources :harbors 
+      resources :scopes
       resources :collections, :except => :index
-      resources :regions,     :except => :index
+      resources :zones,     :except => :index
       resources :tasks,       :except => :index
       resources :activities,  :except => :index
       resources :properties,  :except => :index

@@ -19,25 +19,25 @@ en:
     menu:
       users: Users
       applications: Applications
-      harbors: Harbors
+      scopes: Scopes
       logout: Logout
 
-  harbors:
+  scopes:
     delete:
       headline: Do you want to delete '%{name}'?
       danger:
         headline: Are you ABSOLUTELY sure?
         warning: Unexpected bad things will happen if you don't read this!
-        body: This action CANNOT be undone. This will permanently delete the %{name} harbor.
-        reason: Please type in the name of the harbor to confirm.
-        delete: I understand the consequences, delete this harbor.
+        body: This action CANNOT be undone. This will permanently delete the %{name} scope.
+        reason: Please type in the name of the scope to confirm.
+        delete: I understand the consequences, delete this scope.
 
-  regions:
+  zones:
     form:
       name: name
       description: Description
-      next: Next Region
-      prev: Previous Region
+      next: Next Zone
+      prev: Previous Zone
       lat: Latitude
       lon: Longitude
       technology: Technology

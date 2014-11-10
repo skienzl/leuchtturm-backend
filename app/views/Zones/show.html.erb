@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-5 col-lg-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @zone.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @zone.description %>
+    </p>
+
+    <p>
+      <strong>Next:</strong>
+      <%= @zone.next_id %>
+    </p>
+
+    <p>
+      <strong>Prev:</strong>
+      <%= @zone.prev_id %>
+    </p>
+
+    <p>
+      <strong>Lat:</strong>
+      <%= @zone.lat %>
+    </p>
+
+    <p>
+      <strong>Lon:</strong>
+      <%= @zone.lon %>
+    </p>
+
+    <p>
+      <strong>Technology:</strong>
+      <%= @zone.technology %>
+    </p>
+
+    <p>
+      <strong>Accuracy:</strong>
+      <%= @zone.accuracy %>
+    </p>
+
+    <p>
+      <strong>Identifier:</strong>
+      <%= @zone.identifier %>
+    </p>
+
+    <p>
+      <strong>Minor:</strong>
+      <%= @zone.minor %>
+    </p>
+
+    <p>
+      <strong>Major:</strong>
+      <%= @zone.major %>
+    </p>
+
+    <p>
+      <strong>Shape:</strong>
+      <%= @zone.shape %>
+    </p>
+
+    <p>
+      <strong>Collection:</strong>
+      <%= @zone.collection_id %>
+    </p>
+
+    <p>
+      <strong>Task:</strong>
+      <%= @zone.task_id %>
+    </p>
+
+    <p>
+      <strong>Scope:</strong>
+      <%= @zone.scope_id %>
+    </p>
+  </div>
+  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
+</div>
+
+<%= link_to 'Edit', edit_scope_zone_path(@scope, @zone) %> |
+<%= link_to 'Back', scope_path(@scope) %>

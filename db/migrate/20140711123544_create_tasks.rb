@@ -3,11 +3,11 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :name, null: false
       t.text :description, null: false, default: ""
-      t.integer :harbor_id, null: false
+      t.integer :scope_id, null: false
 
       t.timestamps
     end
 
-    add_index :tasks, :harbor_id
+    add_index :tasks, :scope_id
   end
 end

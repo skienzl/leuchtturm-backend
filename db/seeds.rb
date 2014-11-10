@@ -1,4 +1,3 @@
-
 # USERS
 
 user1 = User.create({email: "mgratzer@gmail.com",
@@ -19,14 +18,14 @@ user3 = User.create({email: "leuchtturm@topmind.eu",
                      password_confirmation: "#letmein#",
                      role: 0})
 
-# HARBORS
+# SCOPES
 
-zell = Harbor.create({
+zell = Scope.create({
     name: "Zell am See Kaprun",
     description: "Deep v pour-over disrupt, umami cornhole bicycle rights authentic bespoke ugh next level. Aesthetic iPhone McSweeney's, wolf Cosby sweater +1 banh mi. Disrupt drinking vinegar mixtape Williamsburg dreamcatcher, farm-to-table Tumblr. Lo-fi selfies ugh, polaroid wayfarers kitsch Schlitz retro mixtape flexitarian selvage PBR Austin trust fund. Flexitarian Blue Bottle shabby chic Helvetica sartorial. Sriracha Pinterest keffiyeh mlkshk 90's. PBR Tumblr organic, farm-to-table mixtape butcher Truffaut crucifix PBR&B kogi."
   })
 
-rb = Harbor.create({
+rb = Scope.create({
     name: "Rettungsboot",
     description: "Bacon ipsum dolor sit amet magna veniam esse, cillum consequat qui pariatur. Sausage rump sed ground round ut dolor fugiat drumstick duis pork voluptate. Sed cow nulla frankfurter venison, ground round ribeye excepteur strip steak magna occaecat labore veniam. Elit andouille tail adipisicing esse ullamco sausage tenderloin beef ribs in cupidatat laboris pastrami chuck pork loin."
   })
@@ -58,30 +57,30 @@ room3 = Collection.create({
 schmitten1_task = Task.create({
     name: "Add Server Log",
     description: "Adds an entry in the website database to get a user counting",
-    harbor: zell
+    scope: zell
 })
 
 schmitten2_task = Task.create({
     name: "Facebook Post Checkin",
     description: "Post a checkin on Facebook",
-    harbor: zell
+    scope: zell
 })
 
 schmitten3_task = Task.create({
     name: "Picture on Twitter",
     description: "User should take picture and uploads it to the server which tweets it on the Zell account.",
-    harbor: zell
+    scope: zell
 })
 
 rb_task = Task.create({
                                   name: "Picture on Twitter",
                                   description: "User should take picture and uploads it to the server which tweets it on the Zell account.",
-                                  harbor: rb
+                                  scope: rb
                               })
 
-# REGIONS
+# ZONES
 
-beacon1 = Region.create({
+beacon1 = Zone.create({
                             name: "Beacon 1",
                             description: "Backbord Beacon",
                             next: nil,
@@ -94,11 +93,11 @@ beacon1 = Region.create({
                             minor: 1,
                             major: 1,
                             collection: room1,
-                            harbor: rb,
+                            scope: rb,
                             task: rb_task
                         })
 
-beacon2 = Region.create({
+beacon2 = Zone.create({
                             name: "Beacon 2",
                             description: "Backbord Beacon",
                             next: nil,
@@ -111,11 +110,11 @@ beacon2 = Region.create({
                             minor: 2,
                             major: 1,
                             collection: room2,
-                            harbor: rb,
+                            scope: rb,
                             task: rb_task
                         })
 
-beacon3 = Region.create({
+beacon3 = Zone.create({
                             name: "Beacon 3",
                             description: "Backbord Beacon",
                             next: nil,
@@ -128,11 +127,11 @@ beacon3 = Region.create({
                             minor: 3,
                             major: 1,
                             collection: room3,
-                            harbor: rb,
+                            scope: rb,
                             task: rb_task
                         })
 
-schmitten1 = Region.create({
+schmitten1 = Zone.create({
                                name: "Schmitten Point of Interest 1",
                                description: "Schmitten POI",
                                next: nil,
@@ -144,12 +143,12 @@ schmitten1 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
-                               harbor: zell,
+                               scope: zell,
                                collection: schmitten,
                                task: schmitten1_task
                            })
 
-schmitten2 = Region.create({
+schmitten2 = Zone.create({
                                name: "Schmitten Point of Interest 2",
                                description: "Schmitten POI",
                                next: nil,
@@ -161,12 +160,12 @@ schmitten2 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
-                               harbor: zell,
+                               scope: zell,
                                collection: schmitten,
                                task: schmitten2_task
                            })
 
-schmitten3 = Region.create({
+schmitten3 = Zone.create({
                                name: "Schmitten Point of Interest 3",
                                description: "Schmitten POI",
                                next: nil,
@@ -178,7 +177,7 @@ schmitten3 = Region.create({
                                identifier: nil,
                                minor: nil,
                                major: nil,
-                               harbor: zell,
+                               scope: zell,
                                collection: schmitten,
                                task: schmitten3_task
                            })

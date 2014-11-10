@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905144031) do
+ActiveRecord::Schema.define(version: 20140816150410) do
 
   create_table "activities", force: true do |t|
     t.string   "identifier",               null: false
@@ -31,15 +31,6 @@ ActiveRecord::Schema.define(version: 20140905144031) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "harbors", force: true do |t|
-    t.string   "name",                     null: false
-    t.text     "description", default: "", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "harbors", ["name"], name: "index_harbors_on_name", unique: true
 
   create_table "mappings", force: true do |t|
     t.integer  "in_id"
@@ -114,35 +105,17 @@ ActiveRecord::Schema.define(version: 20140905144031) do
   add_index "properties", ["activity_id"], name: "index_properties_on_activity_id"
   add_index "properties", ["key"], name: "index_properties_on_key"
 
-  create_table "regions", force: true do |t|
-    t.string   "name",                       null: false
-    t.text     "description",   default: "", null: false
-    t.integer  "next_id"
-    t.integer  "prev_id"
-    t.float    "lat",                        null: false
-    t.float    "lon",                        null: false
-    t.integer  "technology",                 null: false
-    t.integer  "accuracy"
-    t.string   "identifier"
-    t.integer  "minor"
-    t.integer  "major"
-    t.text     "shape"
-    t.integer  "collection_id"
-    t.integer  "task_id"
+  create_table "scopes", force: true do |t|
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "harbor_id",                  null: false
   end
 
-  add_index "regions", ["collection_id"], name: "index_regions_on_collection_id"
-  add_index "regions", ["harbor_id"], name: "index_regions_on_harbor_id"
-  add_index "regions", ["identifier"], name: "index_regions_on_identifier"
-  add_index "regions", ["lat"], name: "index_regions_on_lat"
-  add_index "regions", ["lon"], name: "index_regions_on_lon"
-  add_index "regions", ["task_id"], name: "index_regions_on_task_id"
+  add_index "scopes", ["name"], name: "index_scopes_on_name", unique: true
 
   create_table "settings", force: true do |t|
-    t.integer  "region_id",  null: false
+    t.integer  "zone_id",    null: false
     t.string   "key",        null: false
     t.string   "value",      null: false
     t.datetime "created_at"
@@ -150,17 +123,17 @@ ActiveRecord::Schema.define(version: 20140905144031) do
   end
 
   add_index "settings", ["key"], name: "index_settings_on_key"
-  add_index "settings", ["region_id"], name: "index_settings_on_region_id"
+  add_index "settings", ["zone_id"], name: "index_settings_on_zone_id"
 
   create_table "tasks", force: true do |t|
     t.string   "name",                     null: false
     t.text     "description", default: "", null: false
-    t.integer  "harbor_id",                null: false
+    t.integer  "scope_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tasks", ["harbor_id"], name: "index_tasks_on_harbor_id"
+  add_index "tasks", ["scope_id"], name: "index_tasks_on_scope_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -186,5 +159,32 @@ ActiveRecord::Schema.define(version: 20140905144031) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "zones", force: true do |t|
+    t.string   "name",                       null: false
+    t.text     "description",   default: "", null: false
+    t.integer  "next_id"
+    t.integer  "prev_id"
+    t.float    "lat",                        null: false
+    t.float    "lon",                        null: false
+    t.integer  "technology",                 null: false
+    t.integer  "accuracy"
+    t.string   "identifier"
+    t.integer  "minor"
+    t.integer  "major"
+    t.text     "shape"
+    t.integer  "collection_id"
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "scope_id",                   null: false
+  end
+
+  add_index "zones", ["collection_id"], name: "index_zones_on_collection_id"
+  add_index "zones", ["identifier"], name: "index_zones_on_identifier"
+  add_index "zones", ["lat"], name: "index_zones_on_lat"
+  add_index "zones", ["lon"], name: "index_zones_on_lon"
+  add_index "zones", ["scope_id"], name: "index_zones_on_scope_id"
+  add_index "zones", ["task_id"], name: "index_zones_on_task_id"
 
 end

@@ -1,0 +1,113 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beacon1:
+  name: Beacon 1
+  description: Backbord Beacon
+  lat: 46.62543
+  lon: 14.31136
+  technology: 1
+  accuracy: 2
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  minor: 1
+  major: 1
+  shape:
+  collection: room1
+  task: task_beacontask1
+  scope: rb
+
+beacon2:
+  name: Beacon 2
+  description: Steuerbord beacon
+  lat: 46.62543
+  lon: 14.31136
+  technology: 1
+  accuracy: 2
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  minor: 2
+  major: 1
+  shape:
+  collection: room2
+  task: task_beacontask2
+  scope: rb
+
+beacon3:
+  name: Beacon 3
+  description: Kombüse Beacon
+  lat: 46.62543
+  lon: 14.31136
+  technology: 1
+  accuracy: 2
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  minor: 3
+  major: 1
+  shape:
+  collection: room3
+  task: task_beacontask3
+  scope: rb
+
+schmitten1:
+  name: Schmitten Point of Interest 1
+  description: Schmitten POI
+  lat: 46.62543
+  lon: 14.31136
+  technology: 0
+  accuracy: 2
+  identifier:
+  minor:
+  major:
+  shape:
+  collection: schmitten
+  task: task_schmitten1
+  scope: zell
+
+schmitten2:
+  name: Schmitten Point of Interest 2
+  description: Schmitten POI
+  lat: 46.72541
+  lon: 14.21136
+  technology: 0
+  accuracy: 2
+  identifier:
+  minor:
+  major:
+  shape:
+  collection: schmitten
+  task: task_schmitten1
+  scope: zell
+
+schmitten3:
+  name: Schmitten Point of Interest 3
+  description: Schmitten POI
+  lat: 46.72541
+  lon: 14.21136
+  technology: 0
+  accuracy: 2
+  identifier:
+  minor:
+  major:
+  shape:
+  collection: schmitten
+  task: task_schmitten1
+  scope: zell
+
+nfc1:
+  name: NCF 1
+  description: NFC Test
+  lat: 46.62543
+  lon: 14.31136
+  technology: 2
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  collection: room1
+  task: task_beacontask1
+  scope: rb
+
+qr1:
+  name: QR 1
+  description: QR Test
+  lat: 46.62543
+  lon: 14.31136
+  technology: 3
+  identifier: B9407F30-F5F8-466E-AFF9-25556B57FE6D
+  collection: room1
+  task: task_beacontask1
+  scope: rb

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-5 col-lg-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @scope.name %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @scope.description %>
+    </p>
+  </div>
+  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
+</div>
+
+<%= link_to 'Edit', edit_scope_path(@scope) %> |
+<%= link_to 'Back', scopes_path %>

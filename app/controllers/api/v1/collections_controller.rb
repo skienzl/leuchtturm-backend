@@ -31,12 +31,12 @@ class Api::V1::CollectionsController < Api::V1::ApiController
     # Use callbacks to share common setup or constraints between actions.
     def set_collection
       Collection.transaction do
-        @collection = Collection.all.includes(regions: [:settings]).find(params[:id])
+        @collection = Collection.all.includes(zones: [:settings]).find(params[:id])
       end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collection_params
-      params.require(:collection).permit(:name, :description, :harbor_id)
+      params.require(:collection).permit(:name, :description, :scope_id)
     end
 end
