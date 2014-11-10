@@ -32,15 +32,6 @@ ActiveRecord::Schema.define(version: 20140816150410) do
     t.datetime "updated_at"
   end
 
-  create_table "harbors", force: true do |t|
-    t.string   "name",                     null: false
-    t.text     "description", default: "", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "harbors", ["name"], name: "index_harbors_on_name", unique: true
-
   create_table "mappings", force: true do |t|
     t.integer  "in_id"
     t.integer  "out_id"
@@ -114,6 +105,15 @@ ActiveRecord::Schema.define(version: 20140816150410) do
   add_index "properties", ["activity_id"], name: "index_properties_on_activity_id"
   add_index "properties", ["key"], name: "index_properties_on_key"
 
+  create_table "scopes", force: true do |t|
+    t.string   "name",                     null: false
+    t.text     "description", default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scopes", ["name"], name: "index_scopes_on_name", unique: true
+
   create_table "settings", force: true do |t|
     t.integer  "zone_id",    null: false
     t.string   "key",        null: false
@@ -128,12 +128,12 @@ ActiveRecord::Schema.define(version: 20140816150410) do
   create_table "tasks", force: true do |t|
     t.string   "name",                     null: false
     t.text     "description", default: "", null: false
-    t.integer  "harbor_id",                null: false
+    t.integer  "scope_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tasks", ["harbor_id"], name: "index_tasks_on_harbor_id"
+  add_index "tasks", ["scope_id"], name: "index_tasks_on_scope_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -177,14 +177,14 @@ ActiveRecord::Schema.define(version: 20140816150410) do
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "harbor_id",                  null: false
+    t.integer  "scope_id",                   null: false
   end
 
   add_index "zones", ["collection_id"], name: "index_zones_on_collection_id"
-  add_index "zones", ["harbor_id"], name: "index_zones_on_harbor_id"
   add_index "zones", ["identifier"], name: "index_zones_on_identifier"
   add_index "zones", ["lat"], name: "index_zones_on_lat"
   add_index "zones", ["lon"], name: "index_zones_on_lon"
+  add_index "zones", ["scope_id"], name: "index_zones_on_scope_id"
   add_index "zones", ["task_id"], name: "index_zones_on_task_id"
 
 end

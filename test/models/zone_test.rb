@@ -13,10 +13,10 @@ class ZoneTest < ActiveSupport::TestCase
     assert zone.valid?
   end
 
-  test "harbor required" do
+  test "scope required" do
     zone = Zone.new()
     assert !zone.valid?
-    assert zone.errors[:harbor].any?
+    assert zone.errors[:scope].any?
   end
 
 

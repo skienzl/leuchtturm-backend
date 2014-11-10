@@ -1,0 +1,7 @@
+<ul class="nav nav-sidebar">
+  <% @scope.zones.each do |zone| %>
+    <%= active_li_link_to zone.name, edit_scope_zone_path(@scope, zone) %>
+  <% end %>
+  <%= active_li_link_to t('create'), new_scope_zone_path(@scope) unless @scope.id.nil?%>
+  <%= active_li_link_to t('back'), scopes_path %>
+</ul>

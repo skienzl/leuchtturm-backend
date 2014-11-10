@@ -46,10 +46,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
 
-          <% if @harbor.nil? %>
+          <% if @scope.nil? %>
               <%= render 'layouts/menu' %>
           <% else %>
-              <%= render 'harbors/menu' %>
+              <%= render 'scopes/menu' %>
           <% end %>
 
         </div>

@@ -1,2 +1,2 @@
-json.extract! zone, :id, :name, :description, :harbor_id, :task_id, :collection_id, :next_id, :prev_id, :technology, :accuracy, :identifier, :minor, :major, :shape, :lat, :lon
+json.extract! zone, :id, :name, :description, :scope_id, :task_id, :collection_id, :next_id, :prev_id, :technology, :accuracy, :identifier, :minor, :major, :shape, :lat, :lon
 json.settings zone.settings, partial: 'api/v1/settings/setting', as: :setting

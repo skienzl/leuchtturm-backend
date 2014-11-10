@@ -1,4 +1,4 @@
-class Harbor < ActiveRecord::Base
+class Scope < ActiveRecord::Base
   has_many :zones
   has_many :tasks
 

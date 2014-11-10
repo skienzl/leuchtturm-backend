@@ -1,26 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
 <div class="row">
   <div class="col-sm-6 col-md-5 col-lg-6">
     <p>
       <strong>Name:</strong>
-      <%= @harbor.name %>
+      <%= @scope.name %>
     </p>
-
     <p>
       <strong>Description:</strong>
-      <%= @harbor.description %>
+      <%= @scope.description %>
     </p>
   </div>
   <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
 </div>
 
-
-
-
-
-<%= link_to 'Edit', edit_harbor_path(@harbor) %> |
-<%= link_to 'Back', harbors_path %>
+<%= link_to 'Edit', edit_scope_path(@scope) %> |
+<%= link_to 'Back', scopes_path %>

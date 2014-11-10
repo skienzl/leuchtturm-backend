@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <div class="row">
   <div class="col-sm-6 col-md-5 col-lg-6">
     <p>
@@ -75,14 +73,12 @@
     </p>
 
     <p>
-      <strong>Harbor:</strong>
-      <%= @zone.harbor_id %>
+      <strong>Scope:</strong>
+      <%= @zone.scope_id %>
     </p>
   </div>
   <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"><%= render 'zones/maps' %></div>
 </div>
 
-
-
-<%= link_to 'Edit', edit_harbor_zone_path(@harbor, @zone) %> |
-<%= link_to 'Back', harbor_path(@harbor) %>
+<%= link_to 'Edit', edit_scope_zone_path(@scope, @zone) %> |
+<%= link_to 'Back', scope_path(@scope) %>

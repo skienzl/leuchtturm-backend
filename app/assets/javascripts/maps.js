@@ -39,9 +39,9 @@ function showZones(map){
         url = url.substring(0, url.length-5);
     }
     $.getJSON(url + ".json", function( json ) {
-        if(json.hasOwnProperty('harbor')){
-            for(var i = 0; i < json.harbor.zones.length; i++){
-                addMarker(map, json.harbor.zones[i], false);
+        if(json.hasOwnProperty('scope')){
+            for(var i = 0; i < json.scope.zones.length; i++){
+                addMarker(map, json.scope.zones[i], false);
             }
         }else{
             addMarker(map, json, true);

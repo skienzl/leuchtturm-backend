@@ -1,10 +1,10 @@
-<%= form_for(@harbor) do |f| %>
-  <% if @harbor.errors.any? %>
+<%= form_for(@scope) do |f| %>
+  <% if @scope.errors.any? %>
     <div class="alert alert-danger">
-      <h2><%= pluralize(@harbor.errors.count, "error") %> prohibited this harbor from being saved:</h2>
+      <h2><%= pluralize(@scope.errors.count, "error") %> prohibited this scope from being saved:</h2>
 
       <ul>
-      <% @harbor.errors.full_messages.each do |message| %>
+      <% @scope.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

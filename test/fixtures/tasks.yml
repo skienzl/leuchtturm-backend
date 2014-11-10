@@ -2,24 +2,24 @@
 
 task_beacontask1:
   name: Beacon Task 1
-  harbor: rb
+  scope: rb
 
 task_beacontask2:
   name: Beacon Task 2
-  harbor: rb
+  scope: rb
 
 task_beacontask3:
   name: Beacon Task 3
-  harbor: rb
+  scope: rb
 
 task_schmitten1:
   name: Schmitten Task 1
-  harbor: zell
+  scope: zell
 
 task_schmitten2:
   name: Schmitten Task 2
-  harbor: zell
+  scope: zell
 
 task_schmitten3:
   name: Schmitten Task 3
-  harbor: zell
+  scope: zell

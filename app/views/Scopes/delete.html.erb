@@ -1,13 +1,13 @@
-<h1><%= t('.headline', name: @harbor.name) %></h1>
+<h1><%= t('.headline', name: @scope.name) %></h1>
 
 <div class="col-sm-12 col-md-8">
   <div class="panel panel-danger">
     <div class="panel-heading"><strong><%= t('.danger.headline') %></strong></div>
     <div class="panel-body">
       <p><%= t('.danger.warning') %></p>
-      <p><%= t('.danger.body', name: @harbor.name) %></p>
+      <p><%= t('.danger.body', name: @scope.name) %></p>
       <p><strong><%= t('.danger.reason') %></strong></p>
-      <%= form_tag(@harbor, {method: :delete}) do %>
+      <%= form_tag(@scope, {method: :delete}) do %>
           <div class="form-group">
             <%= text_field_tag 'name', nil, class: 'form-control' %>
           </div>

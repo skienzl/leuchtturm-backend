@@ -37,6 +37,6 @@ class Api::V1::CollectionsController < Api::V1::ApiController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collection_params
-      params.require(:collection).permit(:name, :description, :harbor_id)
+      params.require(:collection).permit(:name, :description, :scope_id)
     end
 end

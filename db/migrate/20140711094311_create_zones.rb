@@ -16,7 +16,7 @@ class CreateZones < ActiveRecord::Migration
       t.integer :collection_id
       t.integer :task_id
       t.timestamps
-      t.integer :harbor_id, null: false
+      t.integer :scope_id, null: false
     end
 
     add_index :zones, :identifier
@@ -24,6 +24,6 @@ class CreateZones < ActiveRecord::Migration
     add_index :zones, :lon
     add_index :zones, :task_id
     add_index :zones, :collection_id
-    add_index :zones, :harbor_id
+    add_index :zones, :scope_id
   end
 end

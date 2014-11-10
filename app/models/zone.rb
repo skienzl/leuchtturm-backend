@@ -7,11 +7,11 @@ class Zone < ActiveRecord::Base
   has_one :next, class_name: 'Zone', foreign_key: 'prev_id'
   has_many :settings
   belongs_to :task
-  belongs_to :harbor
+  belongs_to :scope
 
 
 
-  validates :harbor, presence: true
+  validates :scope, presence: true
 
   validates :name, presence: true
 
