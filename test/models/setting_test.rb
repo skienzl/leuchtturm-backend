@@ -19,4 +19,11 @@ class SettingTest < ActiveSupport::TestCase
     assert !task_property.valid?
     assert task_property.errors[:value].any?
   end
+
+  test "activity required" do
+    task_property = Setting.new()
+    assert !task_property.valid?
+    assert task_property.errors[:activity].any?
+  end
+
 end

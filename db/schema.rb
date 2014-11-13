@@ -115,13 +115,15 @@ ActiveRecord::Schema.define(version: 20140816150410) do
   add_index "scopes", ["name"], name: "index_scopes_on_name", unique: true
 
   create_table "settings", force: true do |t|
-    t.integer  "zone_id",    null: false
-    t.string   "key",        null: false
-    t.string   "value",      null: false
+    t.integer  "zone_id",     null: false
+    t.string   "key",         null: false
+    t.string   "value",       null: false
+    t.integer  "activity_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "settings", ["activity_id"], name: "index_settings_on_activity_id"
   add_index "settings", ["key"], name: "index_settings_on_key"
   add_index "settings", ["zone_id"], name: "index_settings_on_zone_id"
 
