@@ -4,11 +4,13 @@ class CreateSettings < ActiveRecord::Migration
       t.integer :zone_id, null: false
       t.string :key, null: false
       t.string :value, null: false
+      t.integer :activity_id, null: false
 
       t.timestamps
     end
 
     add_index :settings, :key
     add_index :settings, :zone_id
+    add_index :settings, :activity_id
   end
 end

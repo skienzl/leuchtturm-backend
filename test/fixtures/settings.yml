@@ -4,28 +4,34 @@ zone_task1:
   zone: beacon1
   key: key1
   value: value1
+  activity_id: 1
 
 zone_task2:
   zone: beacon2
   key: key1
   value: value1
+  activity_id: 1
 
 zone_task3:
   zone: beacon3
   key: key1
   value: value1
+  activity_id: 1
 
 zone_task4:
   zone: schmitten1
   key: key1
   value: value1
+  activity_id: 1
 
 zone_task5:
   zone: schmitten2
   key: key1
   value: value1
+  activity_id: 1
 
 zone_task6:
   zone: schmitten3
   key: key1
   value: value1
+  activity_id: 1
