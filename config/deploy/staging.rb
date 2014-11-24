@@ -8,6 +8,7 @@ set :stage, :staging
 set :deploy_to, '~/apps/kjume'
 set :branch, 'develop'
 set :rails_env, 'production'
+set :unicorn_config_path, "config/staging/unicorn.rb"
 
 role :app, %w{deploy@staging.kjume.com}
 role :web, %w{deploy@staging.kjume.com}

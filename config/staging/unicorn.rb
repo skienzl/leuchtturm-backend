@@ -23,7 +23,7 @@ timeout 30
 working_directory "/home/deploy/apps/#{app_dir}/current"
 
 # feel free to point this anywhere accessible on the filesystem
-user 'deploy', 'deploy'
+user 'deploy', 'staff'
 shared_path = "/home/deploy/apps/#{app_dir}/shared"
 
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
