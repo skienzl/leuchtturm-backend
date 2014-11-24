@@ -6,7 +6,7 @@
 
 set :stage, :staging
 set :deploy_to, '~/apps/kjume'
-set :branch, 'develop'
+set :branch, 'Feature/capistrano'
 set :rails_env, 'production'
 set :unicorn_config_path, "config/staging/unicorn.rb"
 
