@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
+gem 'unicorn'
 
 # database
 gem 'sqlite3', group: :development
@@ -28,6 +30,11 @@ gem 'spring',        group: :development
 
 #development helper
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+
   gem 'quiet_assets'
   gem 'thin'
   gem 'better_errors'
