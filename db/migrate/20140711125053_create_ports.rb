@@ -3,7 +3,7 @@ class CreatePorts < ActiveRecord::Migration
     create_table :ports do |t|
       t.integer :data_type, null: false
       t.integer :port_type, null: false
-      t.boolean :is_optional, null: false, default: 0
+      t.boolean :is_optional, null: false, default: false
       t.integer :activity_id, null: false
 
       t.timestamps
