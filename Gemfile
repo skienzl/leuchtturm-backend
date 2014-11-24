@@ -3,6 +3,7 @@ ruby '2.1.2'
 
 gem 'rails', '4.1.8'
 gem 'unicorn'
+gem 'dotenv-rails'
 
 # database
 gem 'sqlite3', group: :development
